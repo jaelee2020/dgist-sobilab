@@ -261,75 +261,26 @@
         </div>
     </section>
 
-    <!-- Latest News -->
+    <!-- Shared data files for auto-loading -->
+    <script src="news-data.js"></script>
+    <script src="board-data.js"></script>
+
+    <!-- Latest News (auto-loaded from news-data.js) -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
-                Latest News
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- News 1: Visiting the University of Calgary -->
-                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
-                    <img src="https://static.wixstatic.com/media/56a777_d2ac7131743944e787f6197ff32cdc9b~mv2.jpg" alt="Calgary visiting" class="w-full h-64 object-cover rounded-t-lg">
-                    <div class="h-2 bg-gradient-to-r from-orange-600 to-orange-500"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-orange-600 dark:text-orange-400 font-semibold mb-2">
-                            <i class="fas fa-calendar"></i> Nov. 3, 2025
-                        </div>
-                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
-                            Visiting the University of Calgary
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Prof. Lee and students visited the University of Calgary to collaborate with the Human Performance Lab
-                        </p>
-                    </div>
-                </div>
-
-                <!-- News 2: Sponsored Poster Award in KIM -->
-                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
-                    <img src="https://static.wixstatic.com/media/56a777_5269abb8e7f74245964f4f51dd8a6668~mv2.png" alt="KIM poster award" class="w-full h-64 object-cover rounded-t-lg">
-                    <div class="h-2 bg-gradient-to-r from-green-600 to-green-500"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-green-600 dark:text-green-400 font-semibold mb-2">
-                            <i class="fas fa-calendar"></i> Oct. 30, 2025
-                        </div>
-                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
-                            The Sponsored Poster Award in KIM
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Advanced Materials Sponsored Poster Award at the 2025 KIM conference, with invitation to submit to Advanced Materials
-                        </p>
-                    </div>
-                </div>
-
-                <!-- News 3: Invited Talk in KIM 2025 -->
-                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
-                    <img src="https://static.wixstatic.com/media/56a777_5402ce5c2aad468ead3ad704fbb091f0~mv2.jpg" alt="Invited talk at KIM" class="w-full h-64 object-cover rounded-t-lg">
-                    <div class="h-2 bg-gradient-to-r from-purple-600 to-purple-500"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-purple-600 dark:text-purple-400 font-semibold mb-2">
-                            <i class="fas fa-calendar"></i> Oct. 30, 2025
-                        </div>
-                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
-                            Invited Talk in KIM 2025
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400">
-                            Prof. Lee delivered an invited talk on biocompatible and biodegradable fiber electronic sensors at KIM 2025 in Gwangju
-                        </p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <a href="news.html" class="inline-block px-8 py-3 bg-[#0c1929] dark:bg-[#153040] text-white rounded-lg font-bold hover:bg-[#153040] dark:hover:bg-[#0d7ea0] transition-colors">
-                    View All News
+            <div class="flex justify-between items-center mb-12">
+                <h2 class="text-4xl font-bold text-gray-900 dark:text-white">Latest News</h2>
+                <a href="news.html" class="inline-flex items-center gap-2 text-[#0d7ea0] dark:text-[#22b8cf] font-semibold hover:underline">
+                    View All <i class="fas fa-arrow-right text-sm"></i>
                 </a>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="latestNewsGrid">
+                <!-- Auto-populated from news-data.js -->
             </div>
         </div>
     </section>
 
-    <!-- Latest Board -->
+    <!-- Latest Board (auto-loaded from board.html) -->
     <section class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
         <div class="max-w-7xl mx-auto">
             <div class="flex justify-between items-center mb-12">
@@ -338,58 +289,8 @@
                     View All <i class="fas fa-arrow-right text-sm"></i>
                 </a>
             </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- Board 1: 2025 KSS & KIM Conference -->
-                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
-                    <img src="https://static.wixstatic.com/media/56a777_30427b1e39ed4770b117c7b5e8a1a218~mv2.jpg/v1/fill/w_600,h_623,al_c,q_80,enc_auto/56a777_30427b1e39ed4770b117c7b5e8a1a218~mv2.jpg" alt="2025 KSS & KIM Conference" class="w-full h-56 object-contain bg-gray-100 dark:bg-gray-700 rounded-t-lg">
-                    <div class="h-2 bg-gradient-to-r from-teal-600 to-teal-500"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-teal-600 dark:text-teal-400 font-semibold mb-2">
-                            <i class="fas fa-calendar"></i> Oct. 2025
-                        </div>
-                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
-                            2025 KSS & KIM Conference
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">
-                            The 2025 Fall Conference of the Korean Sensors Society (Oct 22-24) and The Korean Institute of Metals and Materials (Oct 29-31)
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Board 2: 2025 Graduation -->
-                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
-                    <img src="https://static.wixstatic.com/media/56a777_3f14afd6332f4ca4adc093f66e2cc43f~mv2.jpg/v1/fill/w_600,h_745,al_c,q_80,enc_auto/56a777_3f14afd6332f4ca4adc093f66e2cc43f~mv2.jpg" alt="2025 Graduation" class="w-full h-56 object-contain bg-gray-100 dark:bg-gray-700 rounded-t-lg">
-                    <div class="h-2 bg-gradient-to-r from-teal-600 to-teal-500"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-teal-600 dark:text-teal-400 font-semibold mb-2">
-                            <i class="fas fa-calendar"></i> Aug. 2025
-                        </div>
-                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
-                            2025 Graduation
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">
-                            We congratulate Junyeong on all the work he has accomplished at SoBi. We wish you blessings on your journey ahead.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- Board 3: 2025 NANO KOREA -->
-                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
-                    <img src="https://static.wixstatic.com/media/56a777_c0599ab8804948f7ae54faeaafa6f839~mv2.jpg/v1/fill/w_600,h_425,al_c,q_80,enc_auto/56a777_c0599ab8804948f7ae54faeaafa6f839~mv2.jpg" alt="2025 NANO KOREA" class="w-full h-56 object-contain bg-gray-100 dark:bg-gray-700 rounded-t-lg">
-                    <div class="h-2 bg-gradient-to-r from-teal-600 to-teal-500"></div>
-                    <div class="p-6">
-                        <div class="text-sm text-teal-600 dark:text-teal-400 font-semibold mb-2">
-                            <i class="fas fa-calendar"></i> Jul. 2025
-                        </div>
-                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">
-                            2025 NANO KOREA
-                        </h3>
-                        <p class="text-gray-600 dark:text-gray-400 text-sm">
-                            The 23rd International Nanotech Conference & Exhibition (July 02-04th, 2025)
-                        </p>
-                    </div>
-                </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="latestBoardGrid">
+                <!-- Auto-populated from board.html -->
             </div>
         </div>
     </section>
@@ -501,6 +402,53 @@
                 mobileMenu.classList.add('hidden');
             });
         });
+
+        // ====== Auto-render Latest News from news-data.js ======
+        (function() {
+            if (typeof newsData === 'undefined') return;
+            const colors = [
+                { from: 'from-blue-600', to: 'to-blue-500', text: 'text-blue-600', dt: 'dark:text-blue-400' },
+                { from: 'from-orange-600', to: 'to-orange-500', text: 'text-orange-600', dt: 'dark:text-orange-400' },
+                { from: 'from-green-600', to: 'to-green-500', text: 'text-green-600', dt: 'dark:text-green-400' }
+            ];
+            const grid = document.getElementById('latestNewsGrid');
+            grid.innerHTML = newsData.slice(0, 3).map((item, i) => {
+                const c = colors[i % colors.length];
+                return `
+                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
+                    <img src="${item.image}" alt="${item.title}" class="w-full h-64 object-cover rounded-t-lg"
+                         onerror="this.style.height='200px';this.style.background='linear-gradient(135deg,#0c1929,#0d7ea0)';">
+                    <div class="h-2 bg-gradient-to-r ${c.from} ${c.to}"></div>
+                    <div class="p-6">
+                        <div class="text-sm ${c.text} ${c.dt} font-semibold mb-2">
+                            <i class="fas fa-calendar"></i> ${item.date}
+                        </div>
+                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">${item.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">${item.description}</p>
+                    </div>
+                </div>`;
+            }).join('');
+        })();
+
+        // ====== Auto-render Latest Board from board-data.js ======
+        (function() {
+            if (typeof boardItems === 'undefined') return;
+            const grid = document.getElementById('latestBoardGrid');
+            grid.innerHTML = boardItems.slice(0, 3).map(item => `
+                <div class="card-hover bg-white dark:bg-gray-800 rounded-lg overflow-hidden shadow-md border border-gray-200 dark:border-gray-700">
+                    <img src="${item.img}" alt="${item.title}" class="w-full h-56 object-contain bg-gray-100 dark:bg-gray-700 rounded-t-lg"
+                         onerror="this.style.height='200px';this.style.background='linear-gradient(135deg,#0c1929,#0d7ea0)';">
+                    <div class="h-2 bg-gradient-to-r from-teal-600 to-teal-500"></div>
+                    <div class="p-6">
+                        <div class="text-sm text-teal-600 dark:text-teal-400 font-semibold mb-2">
+                            <i class="fas fa-calendar"></i> ${item.date}
+                        </div>
+                        <h3 class="text-lg font-bold mb-3 text-gray-900 dark:text-white">${item.title}</h3>
+                        <p class="text-gray-600 dark:text-gray-400 text-sm">${item.desc.replace(/\n/g, '<br>')}</p>
+                    </div>
+                </div>
+            `).join('');
+        })();
 
     </script>
 </body>
