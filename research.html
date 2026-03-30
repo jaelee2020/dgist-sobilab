@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Research - Soft Bioelectronics Lab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body.dark-mode { color-scheme: dark; }
+        html { scroll-behavior: smooth; }
+        .nav-sticky { position: sticky; top: 0; z-index: 50; }
+
+        .fade-in { animation: fadeIn 0.8s ease-in; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ── Section Header Banner ── */
+        .section-banner {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1.25rem 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        .section-banner::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            opacity: 0.07;
+            background: radial-gradient(circle at 90% 50%, currentColor, transparent 70%);
+        }
+        .section-banner .section-num {
+            font-size: 2.5rem;
+            font-weight: 800;
+            opacity: 0.15;
+            position: absolute;
+            right: 2rem;
+            margin: 0;
+            padding: 0;
+        }
+    }
+</style>
+</head>
+<body class="bg-gray-50 dark:bg-[#081320] transition-colors duration-300">
+    <!-- Navigation -->
+    <nav class="nav-sticky bg-white dark:bg-gray-800 shadow-md overflow-x-auto"
+        style="backdrop-filter: blur(10px)">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center gap-2">
+                    <i class="fas fa-genetics text-2xl text-[#0d7ea0] dark:text-[#22b8cf]"></i>
+                    <span class="hoiden md:inline text-lg font-bold text-gray-900 dark:text-white">SoBiLab</span>
+                </a>
+                <!-- Navigation Links -->
+                <div class="hidden md:flex items-center gap-4">
+                    <a href="index.html" class="text-gray-600 dark:text-gray-400 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Home</a>
+                    <a href="research.html" class="text-gray-600 dark:text-gray-400 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Research</a>
+                    <a href="team.html" class="text-gray-600 dark:text-gray-400 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Team</a>
+                    <a href="publicationc.html" class="text-gray-600 dark:text-gray-400 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Book</a>
+                    <a href="patents.html" class="text-gray-600 dark:text-gray-400 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Patents&amp;Presentations</a>
+                </div>
+                <!-- Theme toggle -->
+                <div class="flex items-center">
+                    <button" rSearchy - Soft Bioelectronics Lab">
+          <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body.dark-mode {
+            color-scheme: dark;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .nav-sticky {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+
+        .member-card {
+            transition: all 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #0d7ea0, #0c1929);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            margin: 0 auto 1rem;
+        }
+
+        .dark-mode .avatar {
+            background: linear-gradient(135deg, #22b8cf, #0f2340);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 dark:bg-[#081320] transition-colors duration-300">
+          <span class="section-num dark:text-orange-400">04</span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch">
+                <!-- Figure (left) -->
+                <div class="fig-panel relative">
+                    <img src="images/robotic_sensors.png" alt="Soft Robotics & Sensors — Self-sensing soft actuator hand robot, proprioceptive artificial muscle, robotic tactile sensing">
+                    <div class="fig-ref">
+                        Self-sensing soft actuator &amp; hand robot &nbsp;&middot;&nbsp; Proprioceptive artificial muscle &nbsp;&middot;&nbsp; Robotic tactile sensing &nbsp;&middot;&nbsp; Physical AI
+                    </div>
+                </div>
+                <!-- Text (right) -->
+                <div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 text-lg leading-relaxed">
+                        One of the key requirements for soft robotic systems is the sensing feedback control of soft actuators, which is essential for their reliable operation in dynamic environments. In this context, the proprioceptive or interactive sensing capabilities of a soft robotic system become crucial for practical, real-world applications. Our group is dedicated to developing various state-of-the-art soft sensing technologies tailored for these systems. Ultimately, our goal is to seamlessly integrate these sensing technologies into wearable and soft robotic systems, creating a synergy with our wearable and implantable sensing systems.
+                    </p>
+                    <div class="bg-orange-50 dark:bg-orange-900/20 p-5 rounded-lg border border-orange-200 dark:border-orange-800">
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-3 text-sm uppercase tracking-wide">Key Research Areas</h4>
+                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                            <li><i class="fas fa-check text-orange-600 dark:text-orange-400 mr-3 text-sm"></i>Self-sensing soft actuators &amp; hand robots</li>
+                            <li><i class="fas fa-check text-orange-600 dark:text-orange-400 mr-3 text-sm"></i>Proprioceptive artificial muscles (TCA)</li>
+                            <li><i class="fas fa-check text-orange-600 dark:text-orange-400 mr-3 text-sm"></i>Robotic tactile sensing &amp; object recognition</li>
+                            <li><i class="fas fa-check text-orange-600 dark:text-orange-400 mr-3 text-sm"></i>Physical Intelligence &amp; Physical AI</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Demonstrations (collapsible) -->
+            <div class="mt-8">
+                <button class="demo-toggle bg-orange-100 dark:bg-orange-900/30 text-orange-800 dark:text-orange-300">
+                    <i class="fas fa-play-circle"></i> Demonstrations
+                    <i class="fas fa-chevron-down chevron"></i>
+                </button>
+                <div class="demo-content mt-4">
+                    <div class="video-grid">
+                        <div class="video-card">
+                            <video controls muted autoplay loop playsinline preload="metadata">
+                                <source src="https://video.wixstatic.com/video/a0b41f_6ff72093096a4db1b04690324d95a72b/1080p/mp4/file.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-label">Self-sensing fiber actuator</div>
+                        </div>
+                        <div class="video-card">
+                            <video controls muted autoplay loop playsinline preload="metadata">
+                                <source src="images/robotics_demo1.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-label">Prosthetic hand (rock-paper-scissors)</div>
+                        </div>
+                        <div class="video-card">
+                            <video controls muted autoplay loop playsinline preload="metadata">
+                                <source src="images/robotics_demo2.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-label">Object recognition &amp; classification</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#081320] dark:bg-[#060e1a] text-white py-16 px-4 sm:px-6 lg:px-8 mt-20">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4 text-[#22b8cf]">SoBiLab</h3>
+                    <p class="text-gray-400">Soft Bioelectronics Lab at DGIST, advancing the frontier of wearable and implantable electronics</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-[#22b8cf]">Contact</h4>
+                    <div class="space-y-3 text-gray-400">
+                        <p><i class="fas fa-envelope w-5 text-[#22b8cf]"></i> <a href="mailto:jaelee@dgist.ac.kr" class="hover:text-white transition-colors">jaelee@dgist.ac.kr</a></p>
+                        <p><i class="fas fa-phone w-5 text-[#22b8cf]"></i> <a href="tel:+82537856228" class="hover:text-white transition-colors">+82 53 785 6228</a></p>
+                        <p><i class="fas fa-map-marker-alt w-5 text-[#22b8cf]"></i> Daegu, South Korea</p>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-lg font-bold mb-4 text-[#22b8cf]">Prospective Students</h4>
+                    <p class="text-gray-400 mb-4">We are actively recruiting talented graduate and postdoctoral researchers.</p>
+                    <a href="opening.html" class="inline-block px-6 py-2 bg-[#0d7ea0] hover:bg-[#153040] transition-colors rounded font-semibold">Learn More</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 pt-8 text-center text-gray-500">
+                <p>&copy; 2026 Soft Bioelectronics Lab, DGIST. All rights reserved.</p>
+                <p class="mt-2 text-sm">Daegu Institute of Science and Technology</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Dark mode toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const html = document.documentElement;
+        const isDarkMode = localStorage.getItem('darkMode') === 'true';
+        if (isDarkMode) { html.classList.add('dark'); darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>'; }
+        darkModeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            const isDark = html.classList.contains('dark');
+            localStorage.setItem('darkMode', isDark);
+            darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+        });
+
+        // Mobile menu
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuToggle.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); });
+        });
+
+        // Skip title screens on specific Wix-hosted demo videos
+        (function() {
+            const skipMap = {
+                'a0b41f_b7e61f70a228446a8625ce9f187c6373': 4,  // Robot-controlling smart glove
+                'a0b41f_071190af74354bec9580620f29e14a3a': 4,  // Wearable EMG for robot control
+                'a0b41f_36e46c389d204f2699626363754eacf3': 5,  // Implantable electronic suture
+                'a0b41f_6ff72093096a4db1b04690324d95a72b': 5   // Self-sensing fiber actuator
+            };
+            document.querySelectorAll('video source').forEach(source => {
+                const src = source.getAttribute('src') || '';
+                for (const [id, skipTo] of Object.entries(skipMap)) {
+                    if (src.includes(id)) {
+                        const video = source.parentElement;
+                        // Skip on initial load
+                        video.addEventListener('loadeddata', function() {
+                            if (this.currentTime < skipTo) this.currentTime = skipTo;
+                        });
+                        // Skip when looping back to start
+                        video.addEventListener('timeupdate', function() {
+                            if (this.currentTime < skipTo) this.currentTime = skipTo;
+                        });
+                        break;
+                    }
+                }
+            });
+        })();
+
+        // Demo sections are always visible (no toggle)
+    </script>
+</body>
+</html>
