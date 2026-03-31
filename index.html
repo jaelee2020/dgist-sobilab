@@ -87,6 +87,35 @@
             background: linear-gradient(135deg, #0c1929 0%, #153040 40%, #0d7ea0 100%);
         }
 
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: url('images/hero_bg.jpg') center/cover no-repeat;
+            opacity: 0.25;
+            mix-blend-mode: screen;
+            z-index: 0;
+            transform: translateX(20%);
+            -webkit-mask-image: linear-gradient(to right, transparent 5%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%);
+            mask-image: linear-gradient(to right, transparent 5%, rgba(0,0,0,0.3) 30%, rgba(0,0,0,1) 60%);
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to right, rgba(12,25,41,0.95) 0%, rgba(21,48,64,0.6) 40%, rgba(13,126,160,0.35) 100%);
+            z-index: 0;
+        }
+
+        .hero-section > * {
+            position: relative;
+            z-index: 1;
+        }
+
         .hero-section .hero-text h1 {
             font-size: clamp(2.5rem, 5vw, 4.5rem);
             font-weight: 800;
@@ -205,55 +234,68 @@
                 Research Highlights
             </h2>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <!-- Card 1 -->
-                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 p-8 rounded-lg border border-blue-200 dark:border-blue-700">
-                    <div class="text-4xl mb-4 text-blue-900 dark:text-blue-300">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
+                <!-- Card 1: 1D Fiber Electronics -->
+                <div class="card-hover bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900 dark:to-cyan-800 p-6 rounded-lg border border-cyan-200 dark:border-cyan-700">
+                    <div class="mb-3">
+                        <img src="images/fiber_icon.png" alt="Fiber" style="width:42px; height:42px; object-fit:contain;">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
+                        1D Fiber Electronics
+                    </h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Single microfiber-based devices and circuits for next-generation electronic textiles
+                    </p>
+                </div>
+
+                <!-- Card 2: Flexible & Stretchable Electronics -->
+                <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 p-6 rounded-lg border border-blue-200 dark:border-blue-700">
+                    <div class="text-3xl mb-3 text-blue-900 dark:text-blue-300">
                         <i class="fas fa-microchip"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
                         Flexible & Stretchable Electronics
                     </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
                         Bio-inspired pressure sensors and wearable electronics that conform to the human body
                     </p>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-8 rounded-lg border border-green-200 dark:border-green-700">
-                    <div class="text-4xl mb-4 text-green-900 dark:text-green-300">
+                <!-- Card 3: Wearable Sensors & Smart Textiles -->
+                <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-6 rounded-lg border border-green-200 dark:border-green-700">
+                    <div class="text-3xl mb-3 text-green-900 dark:text-green-300">
                         <i class="fas fa-shirt"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
                         Wearable Sensors & Smart Textiles
                     </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
                         Real-time health monitoring integrated directly into clothing and accessories
                     </p>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 p-8 rounded-lg border border-purple-200 dark:border-purple-700">
-                    <div class="text-4xl mb-4 text-purple-900 dark:text-purple-300">
+                <!-- Card 4: Implantable Biomedical Devices -->
+                <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 p-6 rounded-lg border border-purple-200 dark:border-purple-700">
+                    <div class="text-3xl mb-3 text-purple-900 dark:text-purple-300">
                         <i class="fas fa-heartbeat"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
                         Implantable Biomedical Devices
                     </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
                         Electronic sutures and bioresorbable sensors for surgical and healthcare applications
                     </p>
                 </div>
 
-                <!-- Card 4 -->
-                <div class="card-hover bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900 dark:to-orange-800 p-8 rounded-lg border border-orange-200 dark:border-orange-700">
-                    <div class="text-4xl mb-4 text-orange-900 dark:text-orange-300">
+                <!-- Card 5: Soft Robotics & Tactile Sensors -->
+                <div class="card-hover bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900 dark:to-orange-800 p-6 rounded-lg border border-orange-200 dark:border-orange-700">
+                    <div class="text-3xl mb-3 text-orange-900 dark:text-orange-300">
                         <i class="fas fa-robot"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white">
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
                         Soft Robotics & Tactile Sensors
                     </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
                         Proprioceptive sensing and interactive systems for collaborative robots
                     </p>
                 </div>
