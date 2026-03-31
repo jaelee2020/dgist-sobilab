@@ -269,7 +269,7 @@
         .card-image img {
             width: 100%;
             height: 100%;
-            object-fit: cover;
+            object-fit: contain;
         }
 
         /* Card Content */
@@ -352,57 +352,68 @@
             color: #d1d5db;
         }
 
-        /* Detail Panel */
+        /* Detail Panel (Center Modal) */
         .detail-panel {
             position: fixed;
-            right: 0;
-            top: 0;
-            width: 450px;
-            height: 100vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.9);
+            width: 90%;
+            max-width: 700px;
+            max-height: 85vh;
             background: white;
-            border-left: 1px solid #e5e7eb;
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.1);
-            transform: translateX(100%);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 1rem;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.35s ease, visibility 0.35s ease;
             z-index: 50;
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
 
         body.dark .detail-panel {
             background: #374151;
-            border-left-color: #4b5563;
-            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
         }
 
         .detail-panel.open {
-            transform: translateX(0);
+            transform: translate(-50%, -50%) scale(1);
+            opacity: 1;
+            visibility: visible;
         }
 
         .detail-close {
             position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            top: 1rem;
+            right: 1rem;
             width: 2.5rem;
             height: 2.5rem;
             border: none;
-            background: transparent;
+            background: rgba(0,0,0,0.05);
+            border-radius: 50%;
             cursor: pointer;
             font-size: 1.5rem;
             color: #6b7280;
-            transition: color 0.2s ease;
+            transition: all 0.2s ease;
             z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .detail-close:hover {
+            background: rgba(0,0,0,0.1);
         }
 
         body.dark .detail-close {
             color: #9ca3af;
-        }
-
-        .detail-close:hover {
-            color: var(--navy);
+            background: rgba(255,255,255,0.1);
         }
 
         body.dark .detail-close:hover {
-            color: #f3f4f6;
+            background: rgba(255,255,255,0.2);
         }
 
         .detail-header {
@@ -411,9 +422,11 @@
 
         .detail-image {
             width: 100%;
-            height: 280px;
-            object-fit: cover;
+            max-height: 400px;
+            object-fit: contain;
             margin-bottom: 1.5rem;
+            background: #f3f4f6;
+            border-radius: 8px;
         }
 
         .detail-meta {
@@ -580,7 +593,8 @@
             }
 
             .detail-panel {
-                width: 100%;
+                width: 95%;
+                max-height: 90vh;
             }
 
             .card-title {
@@ -617,6 +631,54 @@
         .news-card:nth-child(2) { animation-delay: 0.1s; }
         .news-card:nth-child(3) { animation-delay: 0.15s; }
         .news-card:nth-child(n+4) { animation-delay: 0.2s; }
+
+        /* Modal Navigation Arrows */
+        .modal-nav {
+            position: fixed;
+            top: 50%;
+            transform: translateY(-50%);
+            z-index: 55;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            border: none;
+            background: rgba(255,255,255,0.95);
+            color: #374151;
+            cursor: pointer;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+            transition: all 0.2s ease;
+        }
+
+        .modal-nav:hover {
+            background: #fff;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .modal-nav.visible {
+            display: flex;
+        }
+
+        .modal-nav-prev {
+            left: calc(50% - 380px);
+        }
+
+        .modal-nav-next {
+            right: calc(50% - 380px);
+        }
+
+        @media (max-width: 900px) {
+            .modal-nav-prev { left: 8px; }
+            .modal-nav-next { right: 8px; }
+            .modal-nav {
+                width: 40px;
+                height: 40px;
+                background: rgba(255,255,255,0.9);
+            }
+        }
     </style>
 </head>
 <body>
@@ -695,6 +757,13 @@
 
     <!-- Detail Panel -->
     <div class="overlay" id="overlay"></div>
+    <!-- Prev/Next Arrows (outside modal for proper positioning) -->
+    <button class="modal-nav modal-nav-prev" id="modalPrev" aria-label="Previous">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+    </button>
+    <button class="modal-nav modal-nav-next" id="modalNext" aria-label="Next">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+    </button>
     <div class="detail-panel" id="detailPanel">
         <button class="detail-close" id="closeDetail">×</button>
         <div class="detail-header">
@@ -717,6 +786,12 @@
         // newsData is loaded from news-data.js
 
         let currentFilter = 'all';
+        let currentDetailIndex = -1;
+
+        function getFilteredData() {
+            if (currentFilter === 'all') return newsData;
+            return newsData.filter(item => item.categoryClass === currentFilter);
+        }
 
         function getMonthYear(dateStr) {
             const date = new Date(dateStr.replace('.\s', ' '));
@@ -785,29 +860,33 @@
 
         function openDetail(cardElement) {
             const title = cardElement.querySelector('.card-title').textContent;
-            const date = cardElement.querySelector('.card-date').textContent;
-            const category = cardElement.querySelector('.category-badge').textContent;
-            const categoryClass = [...cardElement.classList].find(c => ['award', 'publication', 'invited-talk', 'event', 'press', 'grant', 'welcome'].includes(c));
-            const image = cardElement.querySelector('.card-image img').src;
-            const description = cardElement.querySelector('.card-description').textContent;
+            const filtered = getFilteredData();
+            const idx = filtered.findIndex(n => n.title === title);
+            if (idx >= 0) {
+                showDetailByIndex(idx);
+            }
+        }
 
-            const item = newsData.find(n => n.title === title);
-            const doi = item?.doi;
+        function showDetailByIndex(index) {
+            const filtered = getFilteredData();
+            if (index < 0 || index >= filtered.length) return;
+            currentDetailIndex = index;
+            const item = filtered[index];
 
-            document.getElementById('detailTitle').textContent = title;
-            document.getElementById('detailImage').src = image;
-            document.getElementById('detailDescription').textContent = description;
+            document.getElementById('detailTitle').textContent = item.title;
+            document.getElementById('detailImage').src = item.image;
+            document.getElementById('detailDescription').textContent = item.description;
 
             const metaHtml = `
-                <span class="card-date">${date}</span>
-                <span class="category-badge badge-${categoryClass}">${category}</span>
+                <span class="card-date">${item.date}</span>
+                <span class="category-badge badge-${item.categoryClass}">${item.category}</span>
             `;
             document.getElementById('detailMeta').innerHTML = metaHtml;
 
-            if (doi) {
+            if (item.doi) {
                 document.getElementById('detailDoi').style.display = 'block';
-                document.getElementById('detailDoiLink').textContent = 'https://doi.org/' + doi;
-                document.getElementById('detailDoiLink').href = 'https://doi.org/' + doi;
+                document.getElementById('detailDoiLink').textContent = 'https://doi.org/' + item.doi;
+                document.getElementById('detailDoiLink').href = 'https://doi.org/' + item.doi;
             } else {
                 document.getElementById('detailDoi').style.display = 'none';
             }
@@ -815,16 +894,47 @@
             document.getElementById('detailPanel').classList.add('open');
             document.getElementById('overlay').classList.add('open');
             document.body.style.overflow = 'hidden';
+            updateNavArrows();
+        }
+
+        function updateNavArrows() {
+            const filtered = getFilteredData();
+            const prevBtn = document.getElementById('modalPrev');
+            const nextBtn = document.getElementById('modalNext');
+            prevBtn.classList.toggle('visible', currentDetailIndex > 0);
+            nextBtn.classList.toggle('visible', currentDetailIndex < filtered.length - 1);
+        }
+
+        function navigateDetail(direction) {
+            const filtered = getFilteredData();
+            const newIndex = currentDetailIndex + direction;
+            if (newIndex >= 0 && newIndex < filtered.length) {
+                showDetailByIndex(newIndex);
+                document.getElementById('detailPanel').scrollTop = 0;
+            }
         }
 
         function closeDetail() {
             document.getElementById('detailPanel').classList.remove('open');
             document.getElementById('overlay').classList.remove('open');
+            document.getElementById('modalPrev').classList.remove('visible');
+            document.getElementById('modalNext').classList.remove('visible');
             document.body.style.overflow = 'auto';
+            currentDetailIndex = -1;
         }
 
         document.getElementById('closeDetail').addEventListener('click', closeDetail);
         document.getElementById('overlay').addEventListener('click', closeDetail);
+        document.getElementById('modalPrev').addEventListener('click', () => navigateDetail(-1));
+        document.getElementById('modalNext').addEventListener('click', () => navigateDetail(1));
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (currentDetailIndex < 0) return;
+            if (e.key === 'ArrowLeft') navigateDetail(-1);
+            else if (e.key === 'ArrowRight') navigateDetail(1);
+            else if (e.key === 'Escape') closeDetail();
+        });
 
         // Filter chips
         document.querySelectorAll('.filter-chip').forEach(chip => {
@@ -835,23 +945,6 @@
                 renderCards();
                 document.querySelectorAll('.timeline-item').forEach(item => item.classList.remove('active'));
             });
-        });
-
-        // Dark mode toggle (site-standard: localStorage-based, html.dark class)
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const htmlEl = document.documentElement;
-        const isDarkMode = localStorage.getItem('darkMode') === 'true';
-        if (isDarkMode) {
-            htmlEl.classList.add('dark');
-            document.body.classList.add('dark');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-        darkModeToggle.addEventListener('click', () => {
-            htmlEl.classList.toggle('dark');
-            document.body.classList.toggle('dark');
-            const isDark = htmlEl.classList.contains('dark');
-            localStorage.setItem('darkMode', isDark);
-            darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
         });
 
         // Mobile menu
@@ -866,6 +959,20 @@
         renderTimeline();
         renderCards();
         filterByYear(2025);
+
+        // Auto-open post from URL parameter (e.g., news.html?open=Title)
+        (function() {
+            const params = new URLSearchParams(window.location.search);
+            const openTitle = params.get('open');
+            if (openTitle) {
+                const decodedTitle = decodeURIComponent(openTitle);
+                const filtered = getFilteredData();
+                const idx = filtered.findIndex(n => n.title === decodedTitle);
+                if (idx >= 0) {
+                    setTimeout(() => showDetailByIndex(idx), 300);
+                }
+            }
+        })();
     </script>
 
     <!-- Footer -->

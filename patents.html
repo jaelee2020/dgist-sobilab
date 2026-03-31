@@ -650,21 +650,6 @@
     </footer>
 
     <script>
-        const darkModeToggle = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
-
-        const isDarkMode = localStorage.getItem('darkMode') === 'true';
-        if (isDarkMode) {
-            html.classList.add('dark');
-            darkModeToggle.innerHTML = '<i class="fas fa-sun"></i>';
-        }
-
-        darkModeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            const isDark = html.classList.contains('dark');
-            localStorage.setItem('darkMode', isDark);
-            darkModeToggle.innerHTML = isDark ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
-        });
 
         const mobileMenuToggle = document.getElementById('mobileMenuToggle');
         const mobileMenu = document.getElementById('mobileMenu');
