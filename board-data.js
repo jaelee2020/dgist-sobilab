@@ -3,6 +3,13 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "2026 ROBOSOFT",
+            date: "Apr 2026",
+            year: 2026,
+            desc: "*April 7-11th, 2026.\nIEEE International Conference on Soft Robotics (2026 ROBOSOFT), Kanazawa, Japan",
+            img: "https://static.wixstatic.com/media/56a777_c26a17bc901240e4b2e3e4a8f05a6350~mv2.png/v1/fill/w_600,h_338,al_c,q_80,enc_auto/56a777_c26a17bc901240e4b2e3e4a8f05a6350~mv2.png"
+        },
+        {
             title: "2026 KMEMS Conference",
             date: "Mar 2026",
             year: 2026,
