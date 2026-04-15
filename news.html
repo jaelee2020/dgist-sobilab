@@ -807,7 +807,10 @@
         }
 
         function getMonthYear(dateStr) {
-            const date = new Date(dateStr.replace('.\s', ' '));
+            // Support both "Mar. 17, 2026" and "Mar. 2026" formats
+            const match = dateStr.match(/^([A-Za-z]+)\.?\s+(?:\d+,\s+)?(\d{4})/);
+            const normalized = match ? `${match[1]} 1, ${match[2]}` : dateStr.replace('.\s', ' ');
+            const date = new Date(normalized);
             return { month: date.getMonth(), year: date.getFullYear(), monthStr: date.toLocaleString('en-US', { month: 'short', year: 'numeric' }) };
         }
 
