@@ -308,7 +308,7 @@
     <div class="lightbox-overlay" id="lightbox">
         <div class="lightbox-content bg-white dark:bg-gray-800 shadow-2xl">
             <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
-            <img id="lightboxImg" src="" alt="" class="w-full rounded-t-xl">
+            <div id="lightboxImages"></div>
             <div class="p-6">
                 <h2 id="lightboxTitle" class="text-xl font-bold text-gray-900 dark:text-white mb-3"></h2>
                 <p id="lightboxDesc" class="text-gray-600 dark:text-gray-400 whitespace-pre-line"></p>
@@ -430,7 +430,11 @@
         const item = filtered[index];
         if (!item) return;
         currentLbIndex = index;
-        document.getElementById('lightboxImg').src = item.img;
+        const imgContainer = document.getElementById('lightboxImages');
+        const imgList = item.images || [item.img];
+        imgContainer.innerHTML = imgList.map((src, i) =>
+            `<img src="${src}" alt="${item.title}" class="w-full ${i === 0 ? 'rounded-t-xl' : ''}" loading="lazy" style="display:block;">`
+        ).join('');
         document.getElementById('lightboxTitle').textContent = item.title;
         document.getElementById('lightboxDesc').textContent = item.desc;
         document.getElementById('lightbox').classList.add('active');
