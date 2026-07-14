@@ -3,6 +3,13 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "2026 JCK MEMS/NEMS Conference",
+            date: "Jul 2026",
+            year: 2026,
+            desc: "*July 8th - 10th, 2026.\nJCK MEMS/NEMS Conference in Busan",
+            img: "images/board/jck_mems_nems_2026.jpg"
+        },
+        {
                             title: "SoBiLab Teachers' Day",
                             date: "May 2026",
                             year: 2026,
