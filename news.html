@@ -455,6 +455,53 @@
             border-radius: 8px;
         }
 
+        /* Slideshow styles */
+        .slideshow-container {
+            position: relative;
+            width: 100%;
+            margin-bottom: 1.5rem;
+        }
+        .slideshow-container .detail-image {
+            margin-bottom: 0;
+        }
+        .slide-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            border: none;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 2;
+        }
+        .slide-btn:hover { background: rgba(0,0,0,0.7); }
+        .slide-btn-prev { left: 8px; }
+        .slide-btn-next { right: 8px; }
+        .slide-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px 0 0;
+        }
+        .slide-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #d1d5db;
+            border: none;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .slide-dot.active { background: #0d7ea0; }
+
         .detail-meta {
             display: flex;
             gap: 0.75rem;
@@ -792,7 +839,7 @@
     </button>
     <div class="detail-panel" id="detailPanel">
         <button class="detail-close" id="closeDetail">×</button>
-        <div class="detail-header">
+        <div class="detail-header" id="detailHeader">
             <img id="detailImage" class="detail-image" src="" alt="">
         </div>
         <div class="detail-body">
@@ -806,7 +853,7 @@
         </div>
     </div>
 
-    <script src="news-data.js"></script>
+    <script src="news-data.js?v=jck1"></script>
     <script>
         // newsData is loaded from news-data.js
         // newsData is loaded from news-data.js
@@ -903,7 +950,32 @@
             const item = filtered[index];
 
             document.getElementById('detailTitle').textContent = item.title;
-            document.getElementById('detailImage').src = item.image;
+            // Slideshow support
+            const headerEl = document.getElementById('detailHeader');
+            if (item.images && item.images.length > 1) {
+                const imgs = item.images;
+                headerEl.innerHTML = `
+                    <div class="slideshow-container">
+                        <img id="slideImg" class="detail-image" src="${imgs[0]}" alt="${item.title}">
+                        <button class="slide-btn slide-btn-prev" onclick="changeSlide(-1)">&#10094;</button>
+                        <button class="slide-btn slide-btn-next" onclick="changeSlide(1)">&#10095;</button>
+                        <div class="slide-dots">${imgs.map((_, i) => `<button class="slide-dot${i === 0 ? ' active' : ''}" onclick="goSlide(${i})"></button>`).join('')}</div>
+                    </div>`;
+                window._slideImgs = imgs;
+                window._slideIdx = 0;
+                window.changeSlide = function(d) {
+                    window._slideIdx = (window._slideIdx + d + window._slideImgs.length) % window._slideImgs.length;
+                    document.getElementById('slideImg').src = window._slideImgs[window._slideIdx];
+                    document.querySelectorAll('.slide-dot').forEach((dot, i) => dot.classList.toggle('active', i === window._slideIdx));
+                };
+                window.goSlide = function(i) {
+                    window._slideIdx = i;
+                    document.getElementById('slideImg').src = window._slideImgs[i];
+                    document.querySelectorAll('.slide-dot').forEach((dot, j) => dot.classList.toggle('active', j === i));
+                };
+            } else {
+                headerEl.innerHTML = `<img id="detailImage" class="detail-image" src="${item.image}" alt="${item.title}">`;
+            }
             document.getElementById('detailDescription').innerHTML = item.description;
 
             const metaHtml = `
