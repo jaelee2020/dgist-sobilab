@@ -73,6 +73,44 @@
             border-bottom-color: #22b8cf;
         }
 
+        /* Journal name emphasis (primary) */
+        .journal-name {
+            color: #0d7ea0;
+            font-weight: 600;
+            font-style: italic;
+            letter-spacing: 0.01em;
+        }
+
+        /* Impact Factor / JCR badge (secondary) */
+        .journal-metric {
+            display: inline-block;
+            background: rgba(13, 126, 160, 0.10);
+            color: #0b6b88;
+            font-weight: 600;
+            font-style: normal;
+            font-size: 0.7rem;
+            padding: 1px 8px;
+            border-radius: 9999px;
+            letter-spacing: 0.02em;
+            vertical-align: baseline;
+            margin-left: 2px;
+            white-space: nowrap;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .journal-name { color: #22b8cf; }
+            .journal-metric {
+                background: rgba(34, 184, 207, 0.15);
+                color: #22b8cf;
+            }
+        }
+
+        .dark-mode .journal-name { color: #22b8cf; }
+        .dark-mode .journal-metric {
+            background: rgba(34, 184, 207, 0.15);
+            color: #22b8cf;
+        }
+
     </style>
 </head>
 <body class="bg-gray-50 dark:bg-[#081320] transition-colors duration-300">
@@ -917,6 +955,33 @@
         document.querySelectorAll('#mobileMenu a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Emphasize journal names and IF/JCR metrics in the publication list
+        document.querySelectorAll('.paper-item').forEach(item => {
+            const ps = item.querySelectorAll('p');
+            if (!ps.length) return;
+            const cite = ps[ps.length - 1];
+            const ital = cite.querySelector('i');
+            if (ital) ital.classList.add('journal-name');
+            cite.childNodes.forEach(node => {
+                if (node.nodeType === 3 && /\(IF:/.test(node.textContent)) {
+                    const t = node.textContent;
+                    const m = t.match(/\(IF:[^)]*\)/);
+                    if (m) {
+                        const frag = document.createDocumentFragment();
+                        const before = t.slice(0, m.index);
+                        const after = t.slice(m.index + m[0].length);
+                        if (before) frag.appendChild(document.createTextNode(before));
+                        const span = document.createElement('span');
+                        span.className = 'journal-metric';
+                        span.textContent = m[0].replace(/^\(|\)$/g, '');
+                        frag.appendChild(span);
+                        if (after) frag.appendChild(document.createTextNode(after));
+                        node.replaceWith(frag);
+                    }
+                }
             });
         });
 
