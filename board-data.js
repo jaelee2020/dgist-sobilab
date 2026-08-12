@@ -3,6 +3,13 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "2026 IEEE EMBC Conference",
+            date: "Jul 2026",
+            year: 2026,
+            desc: "*July 26th - 30th, 2026.\n48th Annual International Conference of the IEEE EMBS in Toronto, Canada",
+            img: "images/board/ieee_embc_2026.jpg"
+        },
+        {
             title: "2026 JCK MEMS/NEMS Conference",
             date: "Jul 2026",
             year: 2026,
