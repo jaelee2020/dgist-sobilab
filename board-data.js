@@ -3,6 +3,15 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "2026 Graduation Ceremony",
+            date: "Aug 2026",
+            year: 2026,
+            desc: "*August 2026.\nCongratulations to Hwajoong, Daehyeon, and Yukye on their graduation!\nWe wish you all the best as you begin your new journey as researchers.",
+            img: "images/board/2026_graduate_1.jpeg",
+            images: ["images/board/2026_graduate_1.jpeg", "images/board/2026_graduate_2.jpeg", "images/board/2026_graduate_3.jpeg", "images/board/2026_graduate_4.jpeg"],
+            slideshow: true
+        },
+        {
             title: "2026 IEEE EMBC Conference",
             date: "Jul 2026",
             year: 2026,
