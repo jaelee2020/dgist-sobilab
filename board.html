@@ -124,6 +124,67 @@
             border-color: var(--teal);
         }
 
+        /* Card slideshow */
+        .board-slideshow {
+            position: relative;
+            width: 100%;
+            padding-top: 75%;
+            background: #f3f4f6;
+            overflow: hidden;
+        }
+        html.dark .board-slideshow { background: #1f2937; }
+        .bs-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .bs-img.active { opacity: 1; }
+        .bs-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.4);
+            color: #fff;
+            border: none;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 15px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 3;
+        }
+        .bs-btn:hover { background: rgba(0,0,0,0.75); }
+        .bs-prev { left: 8px; }
+        .bs-next { right: 8px; }
+        .bs-dots {
+            position: absolute;
+            bottom: 8px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            z-index: 3;
+        }
+        .bs-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.55);
+            box-shadow: 0 0 2px rgba(0,0,0,0.5);
+            transition: background 0.2s;
+        }
+        .bs-dot.active { background: var(--teal); }
+
         /* Lightbox overlay */
         .lightbox-overlay {
             position: fixed;
@@ -378,8 +439,15 @@
 
         grid.innerHTML = pageItems.map((item, i) => `
             <div class="masonry-item bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer" onclick="openLightbox(${start + i})">
+                ${(item.slideshow && item.images && item.images.length > 1) ? `
+                <div class="board-slideshow" data-idx="0">
+                    ${item.images.map((src, k) => `<img src="${src}" alt="${item.title}" class="bs-img${k === 0 ? ' active' : ''}" loading="lazy">`).join('')}
+                    <button class="bs-btn bs-prev" aria-label="Previous photo" onclick="event.stopPropagation();bsMove(this,-1)">&#10094;</button>
+                    <button class="bs-btn bs-next" aria-label="Next photo" onclick="event.stopPropagation();bsMove(this,1)">&#10095;</button>
+                    <div class="bs-dots">${item.images.map((_, k) => `<span class="bs-dot${k === 0 ? ' active' : ''}"></span>`).join('')}</div>
+                </div>` : `
                 <img src="${item.img}" alt="${item.title}" class="w-full" loading="lazy"
-                     onerror="this.style.height='200px';this.style.background='linear-gradient(135deg,#0c1929,#0d7ea0)';this.style.display='flex';this.alt='Photo';">
+                     onerror="this.style.height='200px';this.style.background='linear-gradient(135deg,#0c1929,#0d7ea0)';this.style.display='flex';this.alt='Photo';">`}
                 <div class="card-body">
                     <h3 class="card-title text-gray-900 dark:text-white">${item.title}</h3>
                     <p class="text-xs text-[#0d7ea0] dark:text-[#22b8cf] font-semibold mb-2">
@@ -392,6 +460,34 @@
 
         renderPagination(totalPages);
     }
+
+    // ====== Card slideshow (auto-advance + manual arrows) ======
+    function bsShow(box, idx) {
+        const imgs = box.querySelectorAll('.bs-img');
+        const dots = box.querySelectorAll('.bs-dot');
+        const n = imgs.length;
+        if (!n) return;
+        const next = (idx + n) % n;
+        imgs.forEach((im, k) => im.classList.toggle('active', k === next));
+        dots.forEach((d, k) => d.classList.toggle('active', k === next));
+        box.dataset.idx = next;
+    }
+
+    function bsMove(btn, dir) {
+        const box = btn.closest('.board-slideshow');
+        if (!box) return;
+        bsShow(box, parseInt(box.dataset.idx || 0, 10) + dir);
+        box.dataset.paused = '1';
+        clearTimeout(box._resume);
+        box._resume = setTimeout(() => { box.dataset.paused = ''; }, 5000);
+    }
+
+    setInterval(() => {
+        document.querySelectorAll('.board-slideshow').forEach(box => {
+            if (box.dataset.paused === '1') return;
+            bsShow(box, parseInt(box.dataset.idx || 0, 10) + 1);
+        });
+    }, 1000);
 
     function renderPagination(totalPages) {
         const pag = document.getElementById('pagination');
