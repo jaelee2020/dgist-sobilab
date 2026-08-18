@@ -6,7 +6,7 @@ const boardItems = [
             title: "2026 Graduation Ceremony",
             date: "Aug 2026",
             year: 2026,
-            desc: "*August 2026.\nCongratulations to Hwajoong, Daehyeon, and Yukye on their graduation!\nWe wish you all the best as you begin your new journey as researchers.",
+            desc: "*August 2026.\nCongratulations to Hwajoong, Daehyeon, and Yukye on their graduation!\nHwajoong, the first Ph.D. graduate of our lab, made invaluable contributions to establishing our group and shaping its growth into what it is today. We hope he continues his outstanding research as a postdoc in Japan and grows into an even greater researcher beyond.\nWe also hope Daehyeon and Yukye will flourish as a Ph.D. student and a researcher at their new institutions.\nWe wish you all the best as you begin your new journey as researchers.",
             img: "images/board/2026_graduate_1.jpeg",
             images: ["images/board/2026_graduate_1.jpeg", "images/board/2026_graduate_2.jpeg", "images/board/2026_graduate_3.jpeg", "images/board/2026_graduate_4.jpeg"],
             slideshow: true
