@@ -853,7 +853,7 @@
         </div>
     </div>
 
-    <script src="news-data.js?v=jck1"></script>
+    <script src="news-data.js?v=brl1"></script>
     <script>
         // newsData is loaded from news-data.js
         // newsData is loaded from news-data.js
@@ -963,17 +963,24 @@
                     </div>`;
                 window._slideImgs = imgs;
                 window._slideIdx = 0;
+                window._slideRender = function(i) {
+                    const img = document.getElementById('slideImg');
+                    if (!img) { stopSlideAuto(); return; }
+                    window._slideIdx = (i + window._slideImgs.length) % window._slideImgs.length;
+                    img.src = window._slideImgs[window._slideIdx];
+                    document.querySelectorAll('.slide-dot').forEach((dot, k) => dot.classList.toggle('active', k === window._slideIdx));
+                };
                 window.changeSlide = function(d) {
-                    window._slideIdx = (window._slideIdx + d + window._slideImgs.length) % window._slideImgs.length;
-                    document.getElementById('slideImg').src = window._slideImgs[window._slideIdx];
-                    document.querySelectorAll('.slide-dot').forEach((dot, i) => dot.classList.toggle('active', i === window._slideIdx));
+                    window._slideRender(window._slideIdx + d);
+                    pauseSlideAuto();
                 };
                 window.goSlide = function(i) {
-                    window._slideIdx = i;
-                    document.getElementById('slideImg').src = window._slideImgs[i];
-                    document.querySelectorAll('.slide-dot').forEach((dot, j) => dot.classList.toggle('active', j === i));
+                    window._slideRender(i);
+                    pauseSlideAuto();
                 };
+                startSlideAuto();
             } else {
+                stopSlideAuto();
                 headerEl.innerHTML = `<img id="detailImage" class="detail-image" src="${item.image}" alt="${item.title}">`;
             }
             document.getElementById('detailDescription').innerHTML = item.description;
@@ -1015,7 +1022,28 @@
             }
         }
 
+        // ====== Slideshow auto-advance ======
+        function startSlideAuto() {
+            stopSlideAuto();
+            window._slideTimer = setInterval(() => {
+                if (!document.getElementById('slideImg')) { stopSlideAuto(); return; }
+                window._slideRender(window._slideIdx + 1);
+            }, 500);
+        }
+
+        function stopSlideAuto() {
+            if (window._slideTimer) { clearInterval(window._slideTimer); window._slideTimer = null; }
+            if (window._slideResume) { clearTimeout(window._slideResume); window._slideResume = null; }
+        }
+
+        function pauseSlideAuto() {
+            if (window._slideTimer) { clearInterval(window._slideTimer); window._slideTimer = null; }
+            if (window._slideResume) clearTimeout(window._slideResume);
+            window._slideResume = setTimeout(startSlideAuto, 4000);
+        }
+
         function closeDetail() {
+            stopSlideAuto();
             document.getElementById('detailPanel').classList.remove('open');
             document.getElementById('overlay').classList.remove('open');
             document.getElementById('modalPrev').classList.remove('visible');
