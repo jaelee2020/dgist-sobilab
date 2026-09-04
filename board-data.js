@@ -3,6 +3,16 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "2026 ICFPE Conference",
+            date: "Aug 2026",
+            year: 2026,
+            desc: "*August 26th - 28th, 2026.\n16th International Conference on Flexible and Printed Electronics (ICFPE 2026) in Jeju.\nProf. Lee gave an invited talk and four students presented their posters.",
+            img: "images/board/icfpe2026/icfpe2026_1.jpg",
+            images: ["images/board/icfpe2026/icfpe2026_1.jpg", "images/board/icfpe2026/icfpe2026_2.jpg", "images/board/icfpe2026/icfpe2026_3.jpg", "images/board/icfpe2026/icfpe2026_4.jpg", "images/board/icfpe2026/icfpe2026_5.jpg", "images/board/icfpe2026/icfpe2026_6.jpg"],
+            slideshow: true,
+            interval: 1000
+        },
+        {
             title: "2026 Graduation Ceremony",
             date: "Aug 2026",
             year: 2026,
