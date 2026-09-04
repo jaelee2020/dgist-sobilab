@@ -185,6 +185,69 @@
         }
         .bs-dot.active { background: var(--teal); }
 
+        /* Lightbox slideshow */
+        .lb-slideshow {
+            position: relative;
+            width: 100%;
+            padding-top: 62%;
+            background: #0c1929;
+            overflow: hidden;
+            border-radius: 12px 12px 0 0;
+        }
+        .lb-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+        .lb-img.active { opacity: 1; }
+        .lb-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 18px;
+            line-height: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.2s;
+            z-index: 4;
+        }
+        .lb-btn:hover { background: rgba(0,0,0,0.8); }
+        .lb-prev { left: 12px; }
+        .lb-next { right: 12px; }
+        .lb-dots {
+            position: absolute;
+            bottom: 12px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            z-index: 4;
+        }
+        .lb-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.55);
+            border: none;
+            cursor: pointer;
+            padding: 0;
+            transition: background 0.2s;
+        }
+        .lb-dot.active { background: var(--cyan); }
+
         /* Lightbox overlay */
         .lightbox-overlay {
             position: fixed;
@@ -541,14 +604,59 @@
         currentLbIndex = index;
         const imgContainer = document.getElementById('lightboxImages');
         const imgList = item.images || [item.img];
-        imgContainer.innerHTML = imgList.map((src, i) =>
-            `<img src="${src}" alt="${item.title}" class="w-full ${i === 0 ? 'rounded-t-xl' : ''}" loading="lazy" style="display:block;">`
-        ).join('');
+        if (imgList.length > 1) {
+            imgContainer.innerHTML = `
+                <div class="lb-slideshow">
+                    ${imgList.map((src, i) => `<img src="${src}" alt="${item.title}" class="lb-img${i === 0 ? ' active' : ''}">`).join('')}
+                    <button class="lb-btn lb-prev" aria-label="Previous photo" onclick="lbMove(-1)">&#10094;</button>
+                    <button class="lb-btn lb-next" aria-label="Next photo" onclick="lbMove(1)">&#10095;</button>
+                    <div class="lb-dots">${imgList.map((_, i) => `<button class="lb-dot${i === 0 ? ' active' : ''}" onclick="lbGo(${i})"></button>`).join('')}</div>
+                </div>`;
+            lbSlideCount = imgList.length;
+            lbSlideIdx = 0;
+            startLbAuto();
+        } else {
+            stopLbAuto();
+            imgContainer.innerHTML = `<img src="${imgList[0]}" alt="${item.title}" class="w-full rounded-t-xl" loading="lazy" style="display:block;">`;
+        }
         document.getElementById('lightboxTitle').textContent = item.title;
         document.getElementById('lightboxDesc').textContent = item.desc;
         document.getElementById('lightbox').classList.add('active');
         document.body.style.overflow = 'hidden';
         updateLbNav();
+    }
+
+    // ====== Lightbox slideshow (auto-advance + manual arrows) ======
+    let lbSlideIdx = 0, lbSlideCount = 0, lbTimer = null, lbResume = null;
+
+    function lbRender(i) {
+        const imgs = document.querySelectorAll('.lb-img');
+        if (!imgs.length) { stopLbAuto(); return; }
+        lbSlideIdx = (i + imgs.length) % imgs.length;
+        imgs.forEach((im, k) => im.classList.toggle('active', k === lbSlideIdx));
+        document.querySelectorAll('.lb-dot').forEach((d, k) => d.classList.toggle('active', k === lbSlideIdx));
+    }
+
+    function lbMove(d) { lbRender(lbSlideIdx + d); pauseLbAuto(); }
+    function lbGo(i) { lbRender(i); pauseLbAuto(); }
+
+    function startLbAuto() {
+        stopLbAuto();
+        lbTimer = setInterval(() => {
+            if (!document.querySelector('.lb-img')) { stopLbAuto(); return; }
+            lbRender(lbSlideIdx + 1);
+        }, 1500);
+    }
+
+    function stopLbAuto() {
+        if (lbTimer) { clearInterval(lbTimer); lbTimer = null; }
+        if (lbResume) { clearTimeout(lbResume); lbResume = null; }
+    }
+
+    function pauseLbAuto() {
+        if (lbTimer) { clearInterval(lbTimer); lbTimer = null; }
+        if (lbResume) clearTimeout(lbResume);
+        lbResume = setTimeout(startLbAuto, 5000);
     }
 
     function updateLbNav() {
@@ -573,6 +681,7 @@
     }
 
     function closeLightbox() {
+        stopLbAuto();
         document.getElementById('lightbox').classList.remove('active');
         document.getElementById('lbPrev').classList.remove('visible');
         document.getElementById('lbNext').classList.remove('visible');
