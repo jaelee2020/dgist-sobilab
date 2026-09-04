@@ -415,7 +415,7 @@
         </div>
     </footer>
 
-    <script src="board-data.js?v=grad2"></script>
+    <script src="board-data.js?v=icfpe1"></script>
     <script>
     // ====== Board Data loaded from board-data.js ======
     // boardItems is loaded from board-data.js
@@ -440,7 +440,7 @@
         grid.innerHTML = pageItems.map((item, i) => `
             <div class="masonry-item bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer" onclick="openLightbox(${start + i})">
                 ${(item.slideshow && item.images && item.images.length > 1) ? `
-                <div class="board-slideshow" data-idx="0">
+                <div class="board-slideshow" data-idx="0" data-interval="${item.interval || 2500}" data-elapsed="0">
                     ${item.images.map((src, k) => `<img src="${src}" alt="${item.title}" class="bs-img${k === 0 ? ' active' : ''}" loading="lazy">`).join('')}
                     <button class="bs-btn bs-prev" aria-label="Previous photo" onclick="event.stopPropagation();bsMove(this,-1)">&#10094;</button>
                     <button class="bs-btn bs-next" aria-label="Next photo" onclick="event.stopPropagation();bsMove(this,1)">&#10095;</button>
@@ -482,12 +482,20 @@
         box._resume = setTimeout(() => { box.dataset.paused = ''; }, 5000);
     }
 
+    const BS_TICK = 250;
     setInterval(() => {
         document.querySelectorAll('.board-slideshow').forEach(box => {
-            if (box.dataset.paused === '1') return;
-            bsShow(box, parseInt(box.dataset.idx || 0, 10) + 1);
+            if (box.dataset.paused === '1') { box.dataset.elapsed = 0; return; }
+            const interval = parseInt(box.dataset.interval || 2500, 10);
+            const elapsed = parseInt(box.dataset.elapsed || 0, 10) + BS_TICK;
+            if (elapsed >= interval) {
+                box.dataset.elapsed = 0;
+                bsShow(box, parseInt(box.dataset.idx || 0, 10) + 1);
+            } else {
+                box.dataset.elapsed = elapsed;
+            }
         });
-    }, 2500);
+    }, BS_TICK);
 
     function renderPagination(totalPages) {
         const pag = document.getElementById('pagination');
