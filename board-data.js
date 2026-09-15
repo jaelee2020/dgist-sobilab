@@ -3,6 +3,15 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "Joint Workshop with Prof. Min-Gu Kim's Group",
+            date: "Sep 2026",
+            year: 2026,
+            desc: "*September 4th, 2026.\nProf. Min-Gu Kim's group from Yonsei University College of Medicine visited our lab for a joint workshop.\nBoth groups shared their recent research and discussed opportunities for future collaboration.",
+            img: "images/board/mingukim/mingukim_1.jpg",
+            images: ["images/board/mingukim/mingukim_1.jpg", "images/board/mingukim/mingukim_2.jpg", "images/board/mingukim/mingukim_3.jpg"],
+            slideshow: true
+        },
+        {
             title: "2026 ICFPE Conference",
             date: "Aug 2026",
             year: 2026,
