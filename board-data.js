@@ -3,6 +3,15 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "2026 Fall Conference of the Korean Sensors Society",
+            date: "Sep 2026",
+            year: 2026,
+            desc: "*September 16th - 18th, 2026.\n2026 Fall Conference of the Korean Sensors Society at The Ocean Resort, Yeosu.\nJimin and Eunjae presented their posters at the conference.",
+            img: "images/board/sensorcon/sensorcon_1.jpg",
+            images: ["images/board/sensorcon/sensorcon_1.jpg", "images/board/sensorcon/sensorcon_2.jpg", "images/board/sensorcon/sensorcon_3.jpg"],
+            slideshow: true
+        },
+        {
             title: "Joint Workshop with Prof. Min-Gu Kim's Group",
             date: "Sep 2026",
             year: 2026,
