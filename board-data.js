@@ -61,12 +61,12 @@ const boardItems = [
             img: "images/board/jck_mems_nems_2026.jpg"
         },
         {
-                            title: "SoBiLab Teachers' Day",
-                            date: "May 2026",
-                            year: 2026,
-                            desc: "* May 15th, 2026.\nThe group members celebrated Teachers' Day with a surprise cake and a wonderful group photo. Thank you for all the guidance and support!",
-                            img: "images/board/teachers_day_2026_1.jpg",
-                            images: ["images/board/teachers_day_2026_1.jpg", "images/board/teachers_day_2026_2.jpg"]
+            title: "SoBiLab Teachers' Day",
+            date: "May 2026",
+            year: 2026,
+            desc: "* May 15th, 2026.\nThe group members celebrated Teachers' Day with a surprise cake and a wonderful group photo. Thank you for all the guidance and support!",
+            img: "images/board/teachers_day_2026_1.jpg",
+            images: ["images/board/teachers_day_2026_1.jpg", "images/board/teachers_day_2026_2.jpg"]
         },
         {
             title: "2026 ROBOSOFT",
