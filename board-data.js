@@ -3,6 +3,13 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "2026 MNS Fall Conference",
+            date: "Oct 2026",
+            year: 2026,
+            desc: "*September 30th - October 2nd, 2026.\n2026 Fall Conference of the Korean Society of Micro and Nano Systems (MNS) at HICO, Gyeongju.\nOur group presented five posters, and Yuna and Garam each won a Best Poster Award.",
+            img: "images/board/mns2026_fall.jpg"
+        },
+        {
             title: "2026 Fall Conference of the Korean Sensors Society",
             date: "Sep 2026",
             year: 2026,
