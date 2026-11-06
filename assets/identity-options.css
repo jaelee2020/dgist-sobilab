@@ -1,0 +1,62 @@
+/* Local comparison studies: the current index.html stays unchanged. */
+.identity-study{font-family:Inter,-apple-system,BlinkMacSystemFont,'Helvetica Neue',Arial,sans-serif}
+.identity-study h1{margin:0;font-weight:600;letter-spacing:-.04em;line-height:1.13}
+.identity-institution{margin:0 0 12px;font-size:10px;font-weight:600;line-height:1.7;letter-spacing:.025em;color:#abdbe5}
+.identity-institution span{font-weight:400;color:#c6d9e3}
+.identity-tagline{margin:12px 0 0;font-size:14px;line-height:1.7;color:#d6e7ee}
+.identity-pi{margin:0;font-size:10px;line-height:1.8;color:#bad1dc;white-space:nowrap}
+.identity-pi strong{font-weight:500;color:#e5f1f6}
+[data-identity-option] #build{padding-top:64px}
+/* A: one continuous blue field with a fixed identity above the stories. */
+.identity-study-a{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin-bottom:32px;padding-bottom:28px;border-bottom:1px solid #c8e9f030}
+.identity-study-a h1{font-size:42px;color:#fff}
+.identity-study-a .identity-institution{margin-bottom:9px}
+.identity-study-a .identity-tagline{margin-top:9px}
+[data-identity-option="a"] .hero-story-copy h2{font-size:32px;line-height:1.15}
+/* B: a compact white masthead connected to the navigation. */
+.identity-white{background:#fff;color:#132333;padding-top:27px;padding-bottom:29px}
+.identity-study-b{display:flex;align-items:flex-end;justify-content:space-between;gap:35px}
+.identity-study-b h1{font-size:34px;font-weight:500}
+.identity-study-b .identity-institution{font-size:10px;color:#0d7e95;margin-bottom:7px}
+.identity-study-b .identity-institution span{color:#617581}
+.identity-study-b .identity-tagline{font-size:13px;color:#526571;margin-top:8px}
+.identity-study-b .identity-pi{color:#617581}
+.identity-study-b .identity-pi strong{color:#334f60}
+/* C: the lab is the primary heading beside the video; stories support it. */
+.identity-study-c{margin-bottom:25px}
+.identity-study-c h1{font-size:46px;line-height:1.08;color:#fff;margin-bottom:13px}
+.identity-study-c h1>span{display:block}
+.identity-study-c .identity-institution{max-width:410px;margin-bottom:14px;font-size:10px}
+.identity-study-c .identity-tagline{max-width:390px;margin-top:0;font-size:14px}
+.identity-study-c .identity-pi{font-size:10px;margin-top:7px}
+[data-identity-option="c"] .hero-story-copy h2{font-size:26px;font-weight:500;line-height:1.2;margin-bottom:12px;min-height:62.4px}
+[data-identity-option="c"] .is-changing .hero-story-copy{opacity:1}
+[data-identity-option="c"] .identity-story-copy{opacity:1;transition:opacity .22s ease}
+[data-identity-option="c"] .is-changing .identity-story-copy{opacity:0}
+[data-identity-option="c"] .hero-story-field{margin-bottom:11px}
+[data-identity-option="c"] .hero-story-description{line-height:1.8;margin-bottom:20px;min-height:64.8px}
+@media(max-width:1150px){.identity-study-c h1{font-size:40px}.identity-study-a h1{font-size:38px}.identity-study-b h1{font-size:32px}}
+@media(max-width:767px){
+ [data-identity-option] #build{padding-top:40px}
+ .identity-institution{font-size:9px;letter-spacing:0;line-height:1.6}
+ .identity-study-a,.identity-study-b{display:block}
+ .identity-study-a{margin-bottom:27px;padding-bottom:24px}
+ .identity-study-a h1{font-size:33px;line-height:1.13;max-width:480px}
+ .identity-tagline{font-size:12px}
+ .identity-pi{font-size:9px;margin-top:9px}
+ [data-identity-option="a"] .hero-story-copy h2{font-size:27px}
+ .identity-white{padding-top:23px;padding-bottom:24px}
+ .identity-study-b h1{font-size:29px;line-height:1.15}
+ .identity-study-b .identity-institution{font-size:8px;line-height:1.6}
+ .identity-study-b .identity-tagline{font-size:12px}
+ .identity-study-c{margin-bottom:23px}
+ .identity-study-c h1{font-size:34px;line-height:1.08;margin-bottom:11px}
+ .identity-study-c .identity-institution{font-size:9px;margin-bottom:13px}
+ .identity-study-c .identity-tagline{font-size:12px}
+ .identity-study-c .identity-pi{font-size:9px}
+ [data-identity-option="c"] .hero-story-copy h2{font-size:25px;min-height:60px}
+ [data-identity-option="c"] .hero-story-description{min-height:59.4px}
+}
+@media(max-width:360px){.identity-study-c h1{font-size:32px}.identity-study-a h1{font-size:31px}.identity-study-b h1{font-size:27px}}
+.dark .identity-white{background:#1f2937;color:#eef5fa}.dark .identity-study-b .identity-institution,.dark .identity-study-b .identity-institution span,.dark .identity-study-b .identity-tagline,.dark .identity-study-b .identity-pi,.dark .identity-study-b .identity-pi strong{color:#c7d9e4}
+@media(prefers-reduced-motion:reduce){[data-identity-option="c"] .identity-story-copy{transition:none}}
