@@ -30,7 +30,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="images/sobilab-logo.png?v=3">
     <link rel="shortcut icon" href="/dgist-sobilab/favicon.ico?v=3">
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png?v=3">
-    <title>Opening & Recruitment - Soft Bioelectronics Lab | SoBiLab - DGIST</title>
+    <title>Join Us - Soft Bioelectronics Lab | SoBiLab - DGIST</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <style>
@@ -75,6 +75,8 @@
             background-color: rgba(96, 165, 250, 0.05);
         }
     </style>
+    <link rel="stylesheet" href="assets/content-preview.css">
+    <script src="assets/content-preview.js" defer></script>
 </head>
 <body class="bg-gray-50 dark:bg-[#081320] transition-colors duration-300">
     <!-- Navigation -->
@@ -95,7 +97,7 @@
                     <a href="publication.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0c1929] dark:hover:text-[#22b8cf] transition-colors font-medium">Publication</a>
                     <a href="lectures.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0c1929] dark:hover:text-[#22b8cf] transition-colors font-medium">Lectures</a>
                     <a href="board.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0c1929] dark:hover:text-[#22b8cf] transition-colors font-medium">Board</a>
-                    <a href="opening.html" class="text-[#0c1929] dark:text-[#22b8cf] font-bold">Opening</a>
+                    <a href="opening.html" class="text-[#0c1929] dark:text-[#22b8cf] font-bold">Join Us</a>
                     <a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-[#0c1929] dark:hover:text-[#22b8cf] transition-colors font-medium">Contact</a>
                 </div>
 
@@ -103,7 +105,7 @@
                     <a href="https://www.dgist.ac.kr" target="_blank" rel="noopener" class="hidden md:block">
                         <img src="images/DGIST_1.png" alt="DGIST" style="height:14px" class="object-contain">
                     </a>
-                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                    <button id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -117,7 +119,7 @@
                 <a href="publication.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Publication</a>
                 <a href="lectures.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Lectures</a>
                 <a href="board.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Board</a>
-                <a href="opening.html" class="block px-4 py-2 text-[#0c1929] dark:text-[#22b8cf] font-bold">Opening</a>
+                <a href="opening.html" class="block px-4 py-2 text-[#0c1929] dark:text-[#22b8cf] font-bold">Join Us</a>
                 <a href="index.html#contact" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Contact</a>
             </div>
         </div>
@@ -126,283 +128,192 @@
     <!-- Page Header -->
     <div class="bg-gradient-to-r from-[#0c1929] to-[#0d7ea0] dark:from-[#081320] dark:to-[#153040] text-white py-16 px-4 sm:px-6 lg:px-8">
         <div class="max-w-7xl mx-auto">
-            <h1 class="text-5xl font-bold mb-4">Join Our Lab</h1>
-            <p class="text-xl text-blue-100">We're recruiting talented researchers to advance soft bioelectronics</p>
+            <h1 class="text-5xl font-bold mb-4">Join Us</h1>
+            <p class="text-xl text-blue-100">Graduate research, undergraduate research &amp; postdoctoral opportunities in soft bioelectronics</p>
         </div>
     </div>
 
     <!-- Main Content -->
     <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <!-- Introduction -->
-        <section class="mb-20">
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700">
-                <h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-6">
-                    Why Join SoBiLab?
-                </h2>
-                <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    The Soft Bioelectronics Lab is an innovative research group at DGIST working at the intersection of materials science, electronics, and biomedical engineering. We create cutting-edge wearable and implantable devices that can improve human health and enable new forms of human-robot interaction.
-                </p>
-                <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
-                    Our team is collaborative, interdisciplinary, and committed to advancing both fundamental science and practical applications. We offer an environment where you can develop as a researcher, contribute to impactful projects, and build your academic career.
-                </p>
-            </div>
-        </section>
-
-        <!-- Graduate Students -->
-        <section class="mb-20">
-            <h2 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">
-                Graduate Student Opportunities
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
-                <!-- M.S. Program -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700">
+        <!-- Research opportunities -->
+        <section class="mb-20" aria-labelledby="opportunities-heading">
+            <h2 id="opportunities-heading" class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">Find Your Research Path</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700 flex flex-col">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-blue-100 dark:bg-[#0c1929] rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-graduation-cap text-[#0c1929] dark:text-blue-300 text-xl"></i>
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-[#0c1929] rounded-full flex items-center justify-center mr-4 shrink-0">
+                            <i class="fas fa-graduation-cap text-[#0c1929] dark:text-blue-300 text-xl" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Master's Degree (M.S.)</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Graduate Research</h3>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                        Two-year program focusing on fundamental research skills, coursework, and thesis research. M.S. students work on focused projects that contribute to ongoing research areas.
-                    </p>
-                    <div class="bg-blue-50 dark:bg-[#0c1929] p-4 rounded border border-blue-200 dark:border-blue-700">
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-3">Qualifications:</h4>
-                        <ul class="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
-                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2"></i>Bachelor's degree in engineering, physics, materials science, or related field</li>
-                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2"></i>Strong foundation in mathematics and basic sciences</li>
-                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2"></i>Research experience is a plus but not required</li>
-                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2"></i>English language proficiency</li>
-                        </ul>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">Explore M.S. or Ph.D. research in single-microfiber sensors, wearable interfaces, electronic sutures and soft robotics. Tell us which research question interests you and how your background connects with it.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">A short introduction is enough to begin an inquiry. Formal graduate admission follows DGIST's application process.</p>
+                    <div class="mt-auto">
+                        <button type="button" data-inquiry="Graduate research" class="inline-block px-6 py-3 bg-[#0c1929] text-white rounded-lg font-bold hover:bg-[#0d7ea0] transition-colors">Ask About Graduate Research</button>
                     </div>
-                </div>
-
-                <!-- Ph.D. Program -->
-                <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700">
+                </article>
+                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700 flex flex-col">
                     <div class="flex items-center mb-6">
-                        <div class="w-12 h-12 bg-green-100 dark:bg-green-900 rounded-full flex items-center justify-center mr-4">
-                            <i class="fas fa-book-open text-green-900 dark:text-green-300 text-xl"></i>
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-[#0c1929] rounded-full flex items-center justify-center mr-4 shrink-0">
+                            <i class="fas fa-microscope text-[#0d7ea0] dark:text-[#22b8cf] text-xl" aria-hidden="true"></i>
                         </div>
-                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Ph.D. Degree (Ph.D.)</h3>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Undergraduate Research</h3>
                     </div>
-                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                        Four to five-year program for students committed to deep research and innovation. Ph.D. students lead their own research projects, publish papers, and become independent researchers.
-                    </p>
-                    <div class="bg-green-50 dark:bg-green-900 p-4 rounded border border-green-200 dark:border-green-700">
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-3">Qualifications:</h4>
-                        <ul class="space-y-2 text-gray-700 dark:text-gray-300 text-sm">
-                            <li><i class="fas fa-check text-green-600 dark:text-green-400 mr-2"></i>Master's degree or strong Bachelor's degree record</li>
-                            <li><i class="fas fa-check text-green-600 dark:text-green-400 mr-2"></i>Research experience and publication record preferred</li>
-                            <li><i class="fas fa-check text-green-600 dark:text-green-400 mr-2"></i>Strong motivation for independent research</li>
-                            <li><i class="fas fa-check text-green-600 dark:text-green-400 mr-2"></i>English language proficiency</li>
-                        </ul>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">Connect your coursework with an experimental research question. Ask about projects involving soft materials, device fabrication, sensing measurements or wearable systems.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">Include your current program, interests and possible participation period so that research fit and timing can be discussed.</p>
+                    <div class="mt-auto">
+                        <button type="button" data-inquiry="Undergraduate research / internship" class="inline-block px-6 py-3 bg-[#0c1929] text-white rounded-lg font-bold hover:bg-[#0d7ea0] transition-colors">Ask About an Internship</button>
                     </div>
-                </div>
+                </article>
+                <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700 flex flex-col">
+                    <div class="flex items-center mb-6">
+                        <div class="w-12 h-12 bg-blue-100 dark:bg-[#0c1929] rounded-full flex items-center justify-center mr-4 shrink-0">
+                            <i class="fas fa-flask text-[#0d7ea0] dark:text-[#22b8cf] text-xl" aria-hidden="true"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white">Postdoctoral Research</h3>
+                    </div>
+                    <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">Discuss a research direction that builds on your expertise in materials, electronics, mechanical systems or bioengineering, with a focus on soft sensing devices and their integration.</p>
+                    <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed"><a href="#postdoctoral-research" class="text-[#0d7ea0] dark:text-[#22b8cf] hover:underline">Explore research directions and inquiry materials <i class="fas fa-arrow-down ml-1" aria-hidden="true"></i></a></p>
+                    <div class="mt-auto">
+                        <button type="button" data-inquiry="Postdoctoral research" class="inline-block px-6 py-3 bg-[#0c1929] text-white rounded-lg font-bold hover:bg-[#0d7ea0] transition-colors">Discuss Postdoctoral Research</button>
+                    </div>
+                </article>
             </div>
-
             <div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-[#0c1929] dark:to-[#153040] rounded-lg shadow-md p-8 border border-blue-200 dark:border-blue-700">
-                <h4 class="text-xl font-bold text-gray-900 dark:text-white mb-4">
-                    <i class="fas fa-lightbulb text-[#0d7ea0] dark:text-[#22b8cf] mr-3"></i>Application Process
-                </h4>
-                <p class="text-gray-700 dark:text-gray-300 mb-4">
-                    To apply for graduate positions, please contact Prof. Jaehong Lee with:
-                </p>
-                <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-                    <li><i class="fas fa-envelope text-[#0d7ea0] dark:text-[#22b8cf] mr-3"></i>CV/Resume with research experience</li>
-                    <li><i class="fas fa-envelope text-[#0d7ea0] dark:text-[#22b8cf] mr-3"></i>Statement of research interests</li>
-                    <li><i class="fas fa-envelope text-[#0d7ea0] dark:text-[#22b8cf] mr-3"></i>Academic transcripts</li>
-                    <li><i class="fas fa-envelope text-[#0d7ea0] dark:text-[#22b8cf] mr-3"></i>Contact information for 2-3 references</li>
-                </ul>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4"><i class="fas fa-lightbulb text-[#0d7ea0] dark:text-[#22b8cf] mr-3" aria-hidden="true"></i>A First Conversation</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">Tell us what you are studying, which part of our research caught your attention and what you would like to learn or investigate. For an initial graduate or undergraduate inquiry, you may include a CV to provide context; you do not need a complete research proposal.</p>
+                <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">An informal research inquiry is separate from an admission application. If you decide to apply to a graduate program, follow the current DGIST admission requirements and application schedule.</p>
             </div>
         </section>
 
-        <!-- Postdoc Positions -->
-        <section class="mb-20">
-            <h2 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">
-                Postdoctoral Opportunities
-            </h2>
-
-            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700 mb-8">
-                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
-                    <i class="fas fa-flask text-purple-600 dark:text-purple-400 mr-3"></i>Postdoctoral Research Fellow
-                </h3>
-                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
-                    We welcome experienced postdoctoral researchers interested in independent research projects. Postdocs at SoBiLab can develop their own research direction within our lab's areas of focus, collaborate with graduate students, and prepare for faculty positions.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-3">Position Details:</h4>
-                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-                            <li><i class="fas fa-money-bill text-purple-600 dark:text-purple-400 mr-2"></i>Competitive salary and benefits</li>
-                            <li><i class="fas fa-microscope text-purple-600 dark:text-purple-400 mr-2"></i>Research funding support</li>
-                            <li><i class="fas fa-users text-purple-600 dark:text-purple-400 mr-2"></i>Mentorship for career development</li>
-                        </ul>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-gray-900 dark:text-white mb-3">Requirements:</h4>
-                        <ul class="space-y-2 text-gray-700 dark:text-gray-300">
-                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>Ph.D. in relevant field</li>
-                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>Proven research track record</li>
-                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>Strong publication record</li>
-                            <li><i class="fas fa-check text-purple-600 dark:text-purple-400 mr-2"></i>English language proficiency</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Research Areas -->
-        <section class="mb-20">
-            <h2 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">
-                Current Research Areas
-            </h2>
-
+        <!-- Research directions -->
+        <section class="mb-20" aria-labelledby="research-directions-heading">
+            <h2 id="research-directions-heading" class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">Research You Could Explore</h2>
+            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8 leading-relaxed">Single microfibers are our starting point. We engineer flexible electrodes and soft sensors, then connect them with wearable interfaces, biomedical devices and robotic systems.</p>
             <div class="space-y-4">
-                <div class="project-item bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                        Flexible & Stretchable Electronics
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Bio-inspired pressure sensors, paper-based interactive devices, stretchable conductor networks. We are seeking students with interests in materials engineering, polymer chemistry, and device physics.
-                    </p>
-                </div>
-
-                <div class="project-item bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                        Wearable Sensors & Smart Textiles
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Textile-integrated electronic sensors, smart gloves for human-machine interaction, real-time physiological monitoring. Positions available for students with background in materials, electronics, or biomedical engineering.
-                    </p>
-                </div>
-
-                <div class="project-item bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                        Implantable Bioelectronics
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Biodegradable electronics, electronic sutures, biocompatible materials. Students should have interest in biomedical applications, materials science, or pharmaceutical engineering.
-                    </p>
-                </div>
-
-                <div class="project-item bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700">
-                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">
-                        Soft Robotics & Tactile Sensing
-                    </h3>
-                    <p class="text-gray-700 dark:text-gray-300">
-                        Proprioceptive sensing systems, interactive soft actuators, human-robot collaboration. Ideal for roboticists, mechanical engineers, and control systems specialists.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Benefits -->
-        <section class="mb-20">
-            <h2 class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">
-                Why Work With Us?
-            </h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="benefit-card bg-gradient-to-br from-blue-50 to-blue-100 dark:from-[#0c1929] dark:to-[#153040] p-6 rounded-lg border border-blue-200 dark:border-blue-700">
-                    <div class="text-3xl mb-4 text-[#0d7ea0] dark:text-[#22b8cf]">
-                        <i class="fas fa-flask-vial"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Cutting-Edge Research</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm">Work on innovative projects at the frontier of soft bioelectronics with world-class facilities and mentorship.</p>
-                </div>
-
-                <div class="benefit-card bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-6 rounded-lg border border-green-200 dark:border-green-700">
-                    <div class="text-3xl mb-4 text-green-600 dark:text-green-400">
-                        <i class="fas fa-book-open"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Career Development</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm">Mentorship from an experienced PI, professional development workshops, and networking opportunities with leading researchers.</p>
-                </div>
-
-                <div class="benefit-card bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 p-6 rounded-lg border border-purple-200 dark:border-purple-700">
-                    <div class="text-3xl mb-4 text-purple-600 dark:text-purple-400">
-                        <i class="fas fa-globe"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Global Network</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm">Collaborate with international partners, present at leading conferences, and build a global research network.</p>
-                </div>
-
-                <div class="benefit-card bg-gradient-to-br from-orange-50 to-orange-100 dark:from-orange-900 dark:to-orange-800 p-6 rounded-lg border border-orange-200 dark:border-orange-700">
-                    <div class="text-3xl mb-4 text-orange-600 dark:text-orange-400">
-                        <i class="fas fa-award"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Publication & Recognition</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm">High impact publication record with opportunities to lead research and build your academic profile.</p>
-                </div>
-
-                <div class="benefit-card bg-gradient-to-br from-pink-50 to-pink-100 dark:from-pink-900 dark:to-pink-800 p-6 rounded-lg border border-pink-200 dark:border-pink-700">
-                    <div class="text-3xl mb-4 text-pink-600 dark:text-pink-400">
-                        <i class="fas fa-handshake"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Collaborative Culture</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm">Work in an inclusive, supportive team environment that values innovation, creativity, and mutual respect.</p>
-                </div>
-
-                <div class="benefit-card bg-gradient-to-br from-indigo-50 to-indigo-100 dark:from-indigo-900 dark:to-indigo-800 p-6 rounded-lg border border-indigo-200 dark:border-indigo-700">
-                    <div class="text-3xl mb-4 text-indigo-600 dark:text-indigo-400">
-                        <i class="fas fa-lightbulb"></i>
-                    </div>
-                    <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">Impact & Innovation</h3>
-                    <p class="text-gray-700 dark:text-gray-300 text-sm">Develop technologies with real-world applications that can improve human health and well-being.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact & Application -->
-        <section>
-            <div class="bg-gradient-to-r from-[#0c1929] to-[#0d7ea0] dark:from-[#081320] dark:to-[#153040] text-white rounded-lg shadow-lg p-12">
-                <h2 class="text-4xl font-bold mb-6">Ready to Apply?</h2>
-                <p class="text-xl text-blue-100 mb-8 leading-relaxed">
-                    We're excited to hear from talented researchers! Please contact Prof. Jaehong Lee with your application materials. We review applications on a rolling basis and respond within two weeks.
-                </p>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">
-                            <i class="fas fa-envelope mr-3"></i>Contact Information
-                        </h3>
-                        <div class="space-y-3 text-blue-100">
-                            <p>
-                                <i class="fas fa-user mr-3 text-blue-300"></i>Prof. Jaehong Lee
-                            </p>
-                            <p>
-                                <i class="fas fa-envelope mr-3 text-blue-300"></i>
-                                <a href="mailto:jaelee@dgist.ac.kr" class="hover:text-white transition-colors underline">jaelee@dgist.ac.kr</a>
-                            </p>
-                            <p>
-                                <i class="fas fa-phone mr-3 text-blue-300"></i>
-                                <a href="tel:+82537856228" class="hover:text-white transition-colors">+82 53 785 6228</a>
-                            </p>
-                            <p>
-                                <i class="fas fa-map-marker-alt mr-3 text-blue-300"></i>Daegu, South Korea
-                            </p>
-                        </div>
-                    </div>
-
-                    <div>
-                        <h3 class="text-2xl font-bold mb-4">
-                            <i class="fas fa-file-alt mr-3"></i>Application Materials
-                        </h3>
-                        <ul class="space-y-3 text-blue-100">
-                            <li><i class="fas fa-check text-blue-300 mr-3"></i>CV or Resume</li>
-                            <li><i class="fas fa-check text-blue-300 mr-3"></i>Statement of research interests</li>
-                            <li><i class="fas fa-check text-blue-300 mr-3"></i>Academic transcripts (unofficial is fine)</li>
-                            <li><i class="fas fa-check text-blue-300 mr-3"></i>2-3 reference contacts (optional but helpful)</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <a href="mailto:jaelee@dgist.ac.kr?subject=Application%20Inquiry%20-%20SoBiLab" class="inline-block px-8 py-4 bg-white text-[#0c1929] rounded-lg font-bold hover:bg-blue-50 transition-colors text-lg">
-                    <i class="fas fa-paper-plane mr-3"></i>Send Your Application
+                <a href="research.html#area-flexible" class="project-item block bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700 hover:border-[#0d7ea0] dark:hover:border-[#22b8cf] transition-colors">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Single-Microfiber Soft Sensor Platforms</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Flexible fiber electrodes and soft sensors that detect pressure, strain and contact, connecting materials engineering with wearable, biomedical and robotic systems.</p>
+                    <p class="text-sm text-[#0d7ea0] dark:text-[#22b8cf] mt-3">Explore materials, electrodes and sensing devices <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></p>
+                </a>
+                <a href="research.html#area-wearable" class="project-item block bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700 hover:border-[#0d7ea0] dark:hover:border-[#22b8cf] transition-colors">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Wearable Sensors &amp; Human–Robot Interfaces</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Sensing fibers and textile electrodes integrated into gloves and clothing for movement monitoring, muscle signal recording and human–robot interaction.</p>
+                    <p class="text-sm text-[#0d7ea0] dark:text-[#22b8cf] mt-3">Explore smart textiles and wearable interfaces <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></p>
+                </a>
+                <a href="research.html#area-healthcare" class="project-item block bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700 hover:border-[#0d7ea0] dark:hover:border-[#22b8cf] transition-colors">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Electronic Sutures &amp; Implantable Bioelectronics</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Soft fiber devices combined with medical sutures for strain and pH sensing, alongside research on electrical stimulation and biodegradable electronics.</p>
+                    <p class="text-sm text-[#0d7ea0] dark:text-[#22b8cf] mt-3">Explore fiber devices for biomedical research <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></p>
+                </a>
+                <a href="research.html#area-robotics" class="project-item block bg-white dark:bg-gray-800 rounded shadow-sm border border-gray-200 dark:border-gray-700 hover:border-[#0d7ea0] dark:hover:border-[#22b8cf] transition-colors">
+                    <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-2">Self-Sensing Actuators &amp; Artificial Muscles</h3>
+                    <p class="text-gray-700 dark:text-gray-300">Soft actuators with integrated sensing to measure deformation and provide feedback for controlled movement in robotic and wearable systems.</p>
+                    <p class="text-sm text-[#0d7ea0] dark:text-[#22b8cf] mt-3">Explore soft robotics and sensing feedback <i class="fas fa-arrow-right ml-1" aria-hidden="true"></i></p>
                 </a>
             </div>
         </section>
+
+        <!-- Postdoctoral research -->
+        <section id="postdoctoral-research" class="mb-20 scroll-mt-24" aria-labelledby="postdoctoral-heading">
+            <h2 id="postdoctoral-heading" class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">Postdoctoral Research</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700 mb-8">
+                <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4"><i class="fas fa-flask text-[#0d7ea0] dark:text-[#22b8cf] mr-3" aria-hidden="true"></i>Soft Sensors &amp; Bioelectronics</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">We welcome inquiries from researchers with a Ph.D. in materials science, electrical or electronic engineering, mechanical engineering, biomedical engineering, or a related field. Tell us how your expertise could connect with a research question in soft sensing or bioelectronics.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-3">Research Directions</h4>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Single-microfiber electrodes, conductive materials and soft mechanical sensors</li>
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Multimodal tactile devices and robotic contact perception toward Physical AI</li>
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Electronic textiles, wearable EMG sensing and human–robot interfaces</li>
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Electronic sutures, implantable sensing and biodegradable fiber electronics</li>
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Self-sensing soft actuators and artificial muscles</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 dark:text-white mb-3">Potential Contributions</h4>
+                        <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">Depending on the research direction, a project could draw on your experience in:</p>
+                        <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Materials and fabrication process development</li>
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Device design, fabrication and performance evaluation</li>
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Experimental measurement and sensor signal analysis</li>
+                            <li><i class="fas fa-check text-[#0d7ea0] dark:text-[#22b8cf] mr-2" aria-hidden="true"></i>Integration of devices with wearable, biomedical or robotic systems</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gradient-to-r from-blue-50 to-blue-100 dark:from-[#0c1929] dark:to-[#153040] rounded-lg shadow-md p-8 border border-blue-200 dark:border-blue-700">
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4"><i class="fas fa-envelope text-[#0d7ea0] dark:text-[#22b8cf] mr-3" aria-hidden="true"></i>Starting a Postdoctoral Inquiry</h3>
+                <p class="text-gray-700 dark:text-gray-300 mb-4 leading-relaxed">Please contact Prof. Jaehong Lee with:</p>
+                <ul class="space-y-3 text-gray-700 dark:text-gray-300 mb-6">
+                    <li><i class="fas fa-file-alt text-[#0d7ea0] dark:text-[#22b8cf] mr-3" aria-hidden="true"></i>A CV outlining your background and research experience</li>
+                    <li><i class="fas fa-book-open text-[#0d7ea0] dark:text-[#22b8cf] mr-3" aria-hidden="true"></i>Links to representative publications</li>
+                    <li><i class="fas fa-lightbulb text-[#0d7ea0] dark:text-[#22b8cf] mr-3" aria-hidden="true"></i>A short description of your research interests and their connection to SoBiLab</li>
+                </ul>
+                <p class="text-sm text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">An inquiry can begin a discussion of research fit. Project scope, appointment availability and support arrangements are discussed individually.</p>
+                <button type="button" data-inquiry="Postdoctoral research" class="inline-block px-6 py-3 bg-[#0c1929] text-white rounded-lg font-bold hover:bg-[#0d7ea0] transition-colors">Prepare a Postdoctoral Inquiry</button>
+            </div>
+        </section>
+
+        <!-- Questions before a first inquiry -->
+        <section class="mb-20" aria-labelledby="questions-heading">
+            <h2 id="questions-heading" class="text-4xl font-bold mb-12 text-gray-900 dark:text-white">Before You Reach Out</h2>
+            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 border border-gray-200 dark:border-gray-700">
+                <div class="space-y-4">
+                    <details class="border-b border-gray-200 dark:border-gray-700 pb-5" open>
+                        <summary class="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">Do I need previous research experience?</summary>
+                        <p class="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Prior experience can be helpful. For an initial graduate or undergraduate conversation, tell us what you have studied and what you would like to learn. Your background and its connection to a possible project can be discussed.</p>
+                    </details>
+                    <details class="border-b border-gray-200 dark:border-gray-700 pb-5">
+                        <summary class="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">Which backgrounds connect with this work?</summary>
+                        <p class="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Our research connects materials and fabrication with electronics, mechanical systems and biomedical applications. Explore the <a href="research.html" class="text-[#0d7ea0] dark:text-[#22b8cf] underline">research overview</a> to see where your interests might fit.</p>
+                    </details>
+                    <details class="border-b border-gray-200 dark:border-gray-700 pb-5">
+                        <summary class="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">What should I include in my first email?</summary>
+                        <p class="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">For a graduate or undergraduate inquiry, start with your current program and a few lines about your interests. A CV can provide additional context. For a postdoctoral inquiry, please include a CV, links to representative publications and a short description of your research interests.</p>
+                    </details>
+                    <details class="border-b border-gray-200 dark:border-gray-700 pb-5">
+                        <summary class="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">Is a research inquiry an admission application?</summary>
+                        <p class="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">No. A conversation with the lab helps explore research fit and possible next steps. Formal graduate applications follow DGIST's current admission requirements, schedule and evaluation process.</p>
+                    </details>
+                    <details class="border-b border-gray-200 dark:border-gray-700 pb-5">
+                        <summary class="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">How can I ask about an undergraduate internship?</summary>
+                        <p class="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Include your university or program, research interests and possible participation period. The match with current research activities and the timing of a placement can then be discussed.</p>
+                    </details>
+                    <details>
+                        <summary class="text-xl font-bold text-gray-900 dark:text-white cursor-pointer">How can I learn about funding or appointment conditions?</summary>
+                        <p class="text-gray-700 dark:text-gray-300 mt-4 leading-relaxed">Contact Prof. Lee to discuss your intended program or research direction. Funding and appointment arrangements depend on the role, project and relevant program requirements.</p>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact -->
+        <section aria-labelledby="contact-heading">
+            <div class="bg-gradient-to-r from-[#0c1929] to-[#0d7ea0] dark:from-[#081320] dark:to-[#153040] text-white rounded-lg shadow-lg p-12">
+                <h2 id="contact-heading" class="text-4xl font-bold mb-6">Start with a Research Conversation</h2>
+                <p class="text-xl text-blue-100 mb-8 leading-relaxed">Tell us what you are studying, which question interests you and what you would like to explore at SoBiLab.</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4"><i class="fas fa-envelope mr-3" aria-hidden="true"></i>Contact Information</h3>
+                        <div class="space-y-3 text-blue-100">
+                            <p><i class="fas fa-user mr-3 text-blue-300" aria-hidden="true"></i>Prof. Jaehong Lee</p>
+                            <p><i class="fas fa-envelope mr-3 text-blue-300" aria-hidden="true"></i><a href="mailto:jaelee@dgist.ac.kr" class="hover:text-white transition-colors underline">jaelee@dgist.ac.kr</a></p>
+                            <p><i class="fas fa-phone mr-3 text-blue-300" aria-hidden="true"></i><a href="tel:+82537856228" class="hover:text-white transition-colors">+82 53 785 6228</a></p>
+                            <p><i class="fas fa-map-marker-alt mr-3 text-blue-300" aria-hidden="true"></i>DGIST · Daegu, South Korea</p>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-bold mb-4"><i class="fas fa-lightbulb mr-3" aria-hidden="true"></i>Not Sure Where to Start?</h3>
+                        <p class="text-blue-100 leading-relaxed">You can be interested in a device, a material or an application without having a complete research plan. Introduce yourself and share what made you curious.</p>
+                        <p class="text-blue-100 mt-4 leading-relaxed">For postdoctoral research, include your CV and representative publications so that your expertise can be considered in the discussion.</p>
+                    </div>
+                </div>
+                <button type="button" data-inquiry="Graduate research" class="inline-block px-8 py-4 bg-white text-[#0c1929] rounded-lg font-bold hover:bg-blue-50 transition-colors text-lg"><i class="fas fa-paper-plane mr-3" aria-hidden="true"></i>Prepare a First Inquiry</button>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
@@ -472,5 +383,14 @@
             });
         });
     </script>
+<dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title"><div class="dialog-inner">
+<div class="dialog-heading"><div><p class="eyebrow">A first conversation</p><h2 id="inquiry-title">Tell us what interests you</h2></div><button class="dialog-close" data-dialog-close aria-label="Close inquiry">×</button></div>
+<p class="dialog-intro">A short introduction is a good place to start. Prepare an email draft below, or write directly to <a href="mailto:jaelee@dgist.ac.kr">jaelee@dgist.ac.kr</a>.</p>
+<form><div class="form-row"><label class="field"><span>Your name</span><input name="name" required autocomplete="name" maxlength="100"></label><label class="field"><span>Current program or background</span><input name="program" required maxlength="180" placeholder="e.g. a third-year engineering student"></label></div>
+<div class="form-row"><label class="field"><span>I would like to discuss</span><select name="opportunity"><option>Graduate research</option><option>Undergraduate research / internship</option><option>Postdoctoral research</option><option>Research opportunities</option></select></label><label class="field"><span>Research interest</span><select name="area"><option>Still exploring</option><option>Single-microfiber soft sensors &amp; robotic touch</option><option>Wearable sensors &amp; smart textiles</option><option>Electronic sutures &amp; bioelectronics</option><option>Artificial muscles &amp; soft robots</option></select></label></div>
+<label class="field"><span>A few words about your interests <small>(optional)</small></span><textarea name="message" maxlength="2500" placeholder="What would you like to build, understand or learn?"></textarea></label>
+<button class="button button-primary" type="submit">Prepare my email <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button><p class="form-note">You can review the draft before sending it through your own email app. Nothing is submitted by this form.</p>
+</form><pre class="draft-output" data-draft-output hidden tabindex="0" aria-label="Prepared email draft"></pre><div class="dialog-draft-actions"><a class="button button-primary button-small" data-email-draft href="mailto:jaelee@dgist.ac.kr">Open email draft <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><button class="button button-ghost button-small" data-copy-draft>Copy draft</button></div><p class="copy-status" data-copy-status role="status" aria-live="polite"></p>
+</div></dialog>
 </body>
 </html>

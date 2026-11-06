@@ -259,8 +259,12 @@
             background: linear-gradient(135deg, #0c1929 0%, #153040 50%, #0d7ea0 100%);
         }
     </style>
+    <link rel="stylesheet" href="assets/content-preview.css">
+    <script src="assets/content-preview.js" defer></script>
+<link rel="stylesheet" href="assets/identity-options.css">
+<link rel="stylesheet" href="assets/identity-a-refinements.css?v=20261106a">
 </head>
-<body class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+<body data-identity-option="a" class="bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
     <!-- Navigation -->
     <nav class="nav-sticky bg-white dark:bg-gray-800 shadow-md">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -281,7 +285,7 @@
                     <a href="publication.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Publication</a>
                     <a href="lectures.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Lectures</a>
                     <a href="board.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Board</a>
-                    <a href="opening.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Opening</a>
+                    <a href="opening.html" class="text-gray-700 dark:text-gray-300 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Join Us</a>
                     <a href="index.html#contact" class="text-gray-700 dark:text-gray-300 hover:text-[#0d7ea0] dark:hover:text-[#22b8cf] transition-colors font-medium">Contact</a>
                 </div>
 
@@ -290,7 +294,7 @@
                     <a href="https://www.dgist.ac.kr" target="_blank" rel="noopener" class="hidden md:block">
                         <img src="images/DGIST_1.png" alt="DGIST" style="height:14px" class="object-contain">
                     </a>
-                    <button id="mobileMenuToggle" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
+                    <button id="mobileMenuToggle" aria-label="Open navigation" aria-expanded="false" aria-controls="mobileMenu" class="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200">
                         <i class="fas fa-bars"></i>
                     </button>
                 </div>
@@ -305,62 +309,62 @@
                 <a href="publication.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Publication</a>
                 <a href="lectures.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Lectures</a>
                 <a href="board.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Board</a>
-                <a href="opening.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Opening</a>
+                <a href="opening.html" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Join Us</a>
                 <a href="index.html#contact" class="block px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded">Contact</a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero-section py-24 md:py-32 px-6 sm:px-10 lg:px-16">
-        <div class="max-w-7xl mx-auto">
-            <div class="hero-text text-white fade-in">
-                <p class="text-sm md:text-base font-semibold tracking-widest uppercase mb-4 text-blue-200" style="letter-spacing:0.2em">
-                    DGIST &middot; Dept. of Robotics and Mechatronics Engineering
-                </p>
-                <h1 class="mb-6">
-                    Soft<br>Bioelectronics<br>Lab
-                </h1>
-                <p class="text-lg md:text-xl font-medium text-blue-100 mb-3">
-                    Led by <strong>Prof. Jaehong Lee</strong>
-                </p>
-                <p class="tagline text-blue-100 mb-10">
-                    Developing cutting-edge soft electronic devices for wearable, implantable, and soft robotic applications to advance human health.
-                </p>
-                <div class="flex flex-wrap gap-4">
-                    <a href="research.html" class="inline-flex items-center gap-2 bg-white text-[#0c1929] px-7 py-3 rounded-full font-bold text-sm hover:bg-blue-50 transition-all hover:shadow-lg hover:shadow-[#0c1929]/20">
-                        <i class="fas fa-flask"></i> Explore Research
-                    </a>
-                    <a href="opening.html" class="inline-flex items-center gap-2 border-2 border-white/60 text-white px-7 py-3 rounded-full font-bold text-sm hover:bg-white hover:text-[#0c1929] transition-all backdrop-blur-sm">
-                        <i class="fas fa-user-plus"></i> Join Our Team
-                    </a>
-                </div>
-            </div>
+    <section class="hero-section hero-v3 px-6 sm:px-10 lg:px-16" aria-label="Research demonstrations">
+      <div class="max-w-7xl mx-auto">
+        <header class="identity-study identity-study-a" aria-labelledby="lab-heading">
+      <div class="identity-study-main"><p class="identity-institution">DGIST <span>· Dept. of Robotics and Mechatronics Engineering</span></p>
+        <h1 id="lab-heading">Soft Bioelectronics Lab</h1>
+        <p class="identity-tagline">Soft electronics for the human body and robotics.</p></div>
+      <p class="identity-pi">Led by <strong>Prof. Jaehong Lee</strong></p>
+    </header>
+        <div class="hero-story-grid" id="hero-story-panel">
+          <div class="hero-story-copy">
+            <h2><span data-story-line>Soft electronics</span><span class="story-accent" data-story-accent>for the human body.</span></h2>
+            <a class="hero-story-field" data-story-field href="research.html#area-wearable">Wearable Sensors &amp; Smart Textiles<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
+            <p class="hero-story-description" data-story-copy>Build sensing fibers and soft sensors into wearable textiles that capture body movement and connect people with electronic systems.</p>
+            <div class="hero-story-tags" data-story-tags aria-label="Research keywords"><span>#WearableElectronics</span><span>#SoftElectronics</span><span>#SmartTextiles</span></div>
+          </div>
+          <div class="hero-story-media">
+            <div class="hero-video-stage"><video data-story-video src="assets/media/smart-textiles-v3.mp4" poster="assets/media/smart-textiles-v3.jpg" muted playsinline preload="metadata" aria-label="A one-second titled frame from a smart-glove demonstration, followed by hand movements controlling a robotic hand."></video><button type="button" class="video-toggle" data-story-toggle aria-label="Play research demonstration"><svg viewBox="0 0 12 12" aria-hidden="true"><path d="M3 1l8 5-8 5z"/></svg></button></div>
+            <div class="story-video-caption"><strong data-story-caption>Sensing fibers in a wearable glove connect hand movement to robotic control</strong><span data-story-credit>Fiber sensors · Smart textiles · Human–machine interfaces</span><a data-story-paper href="https://www.nature.com/articles/s41928-021-00557-1" target="_blank" rel="noopener" hidden>View paper ↗</a></div>
+          </div>
         </div>
+        <div class="hero-story-selector"><div class="story-selector-heading"><p class="selector-label">Choose a research topic</p><div class="story-selector-arrows"><span class="story-count" data-story-count>01 / 05</span><button type="button" data-story-prev aria-label="Previous research story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7"/></svg></button><button type="button" data-story-next aria-label="Next research story"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button></div></div><div class="hero-story-tabs" role="group" aria-label="Choose a research story"><button type="button" data-story-index="0" aria-pressed="true" aria-controls="hero-story-panel"><span class="story-tab-number">01</span><span class="story-tab-title">Smart textiles</span><i class="story-tab-progress" aria-hidden="true"></i></button><button type="button" data-story-index="1" aria-pressed="false" aria-controls="hero-story-panel"><span class="story-tab-number">02</span><span class="story-tab-title">Human-machine interfaces</span><i class="story-tab-progress" aria-hidden="true"></i></button><button type="button" data-story-index="2" aria-pressed="false" aria-controls="hero-story-panel"><span class="story-tab-number">03</span><span class="story-tab-title">Electronic sutures</span><i class="story-tab-progress" aria-hidden="true"></i></button><button type="button" data-story-index="3" aria-pressed="false" aria-controls="hero-story-panel"><span class="story-tab-number">04</span><span class="story-tab-title">Robotic touch</span><i class="story-tab-progress" aria-hidden="true"></i></button><button type="button" data-story-index="4" aria-pressed="false" aria-controls="hero-story-panel"><span class="story-tab-number">05</span><span class="story-tab-title">Soft robotics</span><i class="story-tab-progress" aria-hidden="true"></i></button></div></div>
+        <div class="hero-foundation hero-process-only"><div class="foundation-process" aria-label="Materials to devices to sensing to systems"><span>Materials</span><i aria-hidden="true">→</i><span>Devices</span><i aria-hidden="true">→</i><span>Sensing</span><i aria-hidden="true">→</i><span>Systems</span></div></div>
+      </div>
+      <script type="application/json" id="hero-stories">[{"media": "smart-textiles-v3", "tab": "Smart textiles", "line": "Soft electronics", "accent": "for the human body.", "field": "Wearable Sensors & Smart Textiles", "href": "research.html#area-wearable", "copy": "Build sensing fibers and soft sensors into wearable textiles that capture body movement and connect people with electronic systems.", "caption": "Sensing fibers in a wearable glove connect hand movement to robotic control", "credit": "Fiber sensors · Smart textiles · Human–machine interfaces", "alt": "A one-second titled frame from a smart-glove demonstration, followed by hand movements controlling a robotic hand.", "src": "assets/media/smart-textiles-v3.mp4", "poster": "assets/media/smart-textiles-v3.jpg", "id": "smart-textiles", "tags": ["#WearableElectronics", "#SoftElectronics", "#SmartTextiles"]}, {"media": "healthcare-signals", "tab": "Human-machine interfaces", "line": "Wearable sensing", "accent": "for the human body.", "field": "Wearable Sensors & Smart Textiles", "href": "research.html#area-wearable", "copy": "Capture muscle signals with textile electrodes and wearable sensors to explore interfaces between the human body and machines.", "caption": "Textile electrodes record muscle activity during hand and wrist movements", "credit": "Wearable EMG · Research demonstration", "alt": "Textile electrode demonstration of muscle electrical signal recording", "src": "assets/media/healthcare-signals.mp4", "poster": "assets/media/healthcare-signals.jpg", "id": "human-machine-interfaces", "tags": ["#HumanMachineInterfaces", "#WearableSensors", "#BioSignals"]}, {"media": "suture-v4", "tab": "Electronic sutures", "line": "Electronic sutures.", "accent": "Sensing from within.", "field": "Healthcare & Implantable Bioelectronics", "href": "research.html#area-healthcare", "copy": "Connect soft fiber electronics with medical sutures to investigate tissue mechanics and implantable sensing.", "caption": "Wireless strain sensing during Achilles tendon movement", "credit": "Nature Electronics · 2021 · Animal study", "alt": "Porcine leg movement, an external reading coil and wireless strain-sensor measurements using electronic sutures", "paper": "https://www.nature.com/articles/s41928-021-00557-1", "src": "assets/media/suture-v4.mp4", "poster": "assets/media/suture-v4.jpg", "id": "electronic-sutures", "tags": ["#ElectronicSutures", "#Bioelectronics", "#ImplantableSensors"]}, {"media": "robotic-touch-v15", "tab": "Robotic touch", "line": "Soft sensors for", "accent": "Physical AI.", "field": "Flexible and Stretchable Electronics", "href": "research.html#area-flexible", "copy": "Develop flexible sensing platforms for robotic touch, contact forces and physical interaction.", "caption": "Soft sensing for robotic hands and grippers", "credit": "Research prototypes · Concept design · Separate array test", "alt": "A montage of soft gripper and sensor-covered robotic hand photographs, a labelled conceptual finger-sleeve and flexible sensor array, robotic finger-sleeve motion, and a separate bench sensor-array readout.", "src": "assets/media/robotic-touch-v15.mp4", "poster": "assets/media/robotic-touch-v15.jpg", "id": "robotic-touch", "tags": ["#RoboticSensing", "#TactileSensors", "#PhysicalAI"]}, {"media": "soft-robot-v4", "tab": "Soft robotics", "line": "Soft robots that", "accent": "move and sense.", "field": "Soft Robotics & Tactile Sensors", "href": "research.html#area-robotics", "copy": "Combine artificial muscles, soft actuation and sensing to explore controlled movement and feedback in robotic systems.", "caption": "A soft robotic hand performs rock–paper–scissors and senses finger bending", "credit": "Self-sensing soft robotic hand · Research demonstration", "alt": "A five-finger soft robotic hand performs rock paper scissors with bending-sensor traces shown alongside", "src": "assets/media/soft-robot-v4.mp4", "poster": "assets/media/soft-robot-v4.jpg", "id": "soft-robotics", "tags": ["#SoftRobotics", "#ArtificialMuscles", "#SoftSensors"]}]</script>
+      <script src="assets/hero-stories-a.js?v=20261106a" defer></script>
     </section>
 
     <!-- Research Highlights -->
-    <section class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
+    <!-- Student research directions -->
+    <section id="build" class="px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800" aria-labelledby="research-heading">
+      <div class="max-w-7xl mx-auto">
+        
+        <div class="project-intro">
+          <div class="intro-copy"><p class="eyebrow">01 / Research to explore</p><h2 class="section-heading" id="research-heading">What would you<br>like to build?</h2><p class="lead">Start with an application that interests you. Then explore the fiber electronics, soft sensors and experiments that make it work.</p><a class="text-link" href="research.html">Explore our research <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a></div>
+          <div class="research-list"><a id="robotic-touch" href="research.html#area-flexible" class="research-row"><span class="research-number">01</span><div><h3>Physical AI &amp; Healthcare</h3><span class="research-field">Flexible and Stretchable Electronics</span><p>Build flexible, stretchable sensors that capture touch, pressure and body movement for physical AI and healthcare applications.</p></div><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a id="wearable-interfaces" href="research.html#area-wearable" class="research-row"><span class="research-number">02</span><div><h3>Wearables &amp; human–robot interfaces</h3><span class="research-field">Wearable Sensors &amp; Smart Textiles</span><p>Turn movement and muscle activity into control signals using fiber sensors, wearable electrodes and smart textiles.</p></div><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a id="bioelectronics" href="research.html#area-healthcare" class="research-row"><span class="research-number">03</span><div><h3>Electronic sutures &amp; bioelectronics</h3><span class="research-field">Healthcare &amp; Implantable Bioelectronics</span><p>Give medical sutures new sensing functions with soft fiber electronics for strain, pH and bioelectronic research.</p></div><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><a id="soft-robots" href="research.html#area-robotics" class="research-row"><span class="research-number">04</span><div><h3>Robotic sensors &amp; wearable soft robots</h3><span class="research-field">Soft Robotics &amp; Tactile Sensors</span><p>Develop soft sensors and artificial muscles that combine force and motion sensing with soft actuation for robotic and wearable systems.</p></div><svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><p class="platform-note"><strong>Our core: single-microfiber electronics and soft sensor platforms.</strong><br>We connect soft materials and device fabrication with measurement, signal analysis and system integration.</p></div>
+        </div>
+        <div class="foundation"><span class="foundation-label">From your background to new questions</span><div class="foundation-path"><span>Materials</span><i>/</i><span>Electronics</span><i>/</i><span>Mechanical systems</span><i>/</i><span>Biomedical engineering</span></div></div>
+      </div>
+    </section>
+
+    <!-- Original research highlights -->
+<section id="research-highlights" class="py-20 px-4 sm:px-6 lg:px-8 bg-white dark:bg-gray-800">
         <div class="max-w-7xl mx-auto">
             <h2 class="text-4xl font-bold text-center mb-16 text-gray-900 dark:text-white">
                 Research Highlights
             </h2>
 
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6">
-                <!-- Card 1: 1D Fiber Electronics -->
-                <div class="card-hover bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900 dark:to-cyan-800 p-6 rounded-lg border border-cyan-200 dark:border-cyan-700">
-                    <div class="mb-3">
-                        <img src="images/fiber_icon.png" alt="Fiber" style="width:42px; height:42px; object-fit:contain;">
-                    </div>
-                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
-                        1D Fiber Electronics
-                    </h3>
-                    <p class="text-sm text-gray-700 dark:text-gray-300">
-                        Single microfiber-based devices and circuits for next-generation electronic textiles
-                    </p>
-                </div>
-
-                <!-- Card 2: Flexible & Stretchable Electronics -->
+                <!-- Card 1: Flexible & Stretchable Electronics -->
                 <div class="card-hover bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900 dark:to-blue-800 p-6 rounded-lg border border-blue-200 dark:border-blue-700">
                     <div class="text-3xl mb-3 text-blue-900 dark:text-blue-300">
                         <i class="fas fa-microchip"></i>
@@ -373,7 +377,7 @@
                     </p>
                 </div>
 
-                <!-- Card 3: Wearable Sensors & Smart Textiles -->
+                <!-- Card 2: Wearable Sensors & Smart Textiles -->
                 <div class="card-hover bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900 dark:to-green-800 p-6 rounded-lg border border-green-200 dark:border-green-700">
                     <div class="text-3xl mb-3 text-green-900 dark:text-green-300">
                         <i class="fas fa-shirt"></i>
@@ -386,7 +390,7 @@
                     </p>
                 </div>
 
-                <!-- Card 4: Implantable Biomedical Devices -->
+                <!-- Card 3: Implantable Biomedical Devices -->
                 <div class="card-hover bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900 dark:to-purple-800 p-6 rounded-lg border border-purple-200 dark:border-purple-700">
                     <div class="text-3xl mb-3 text-purple-900 dark:text-purple-300">
                         <i class="fas fa-heartbeat"></i>
@@ -396,6 +400,19 @@
                     </h3>
                     <p class="text-sm text-gray-700 dark:text-gray-300">
                         Electronic sutures and bioresorbable sensors for surgical and healthcare applications
+                    </p>
+                </div>
+
+                <!-- Card 4: 1D Fiber Electronics -->
+                <div class="card-hover bg-gradient-to-br from-cyan-50 to-cyan-100 dark:from-cyan-900 dark:to-cyan-800 p-6 rounded-lg border border-cyan-200 dark:border-cyan-700">
+                    <div class="mb-3">
+                        <img src="images/fiber_icon.png" alt="Fiber" style="width:42px; height:42px; object-fit:contain;">
+                    </div>
+                    <h3 class="text-lg font-bold mb-2 text-gray-900 dark:text-white">
+                        1D Fiber Electronics
+                    </h3>
+                    <p class="text-sm text-gray-700 dark:text-gray-300">
+                        Single microfiber-based devices and circuits for next-generation electronic textiles
                     </p>
                 </div>
 
@@ -599,5 +616,14 @@
         })();
 
     </script>
+<dialog class="inquiry-dialog" id="inquiry-dialog" aria-labelledby="inquiry-title"><div class="dialog-inner">
+<div class="dialog-heading"><div><p class="eyebrow">A first conversation</p><h2 id="inquiry-title">Tell us what interests you</h2></div><button class="dialog-close" data-dialog-close aria-label="Close inquiry">×</button></div>
+<p class="dialog-intro">A short introduction is a good place to start. Prepare an email draft below, or write directly to <a href="mailto:jaelee@dgist.ac.kr">jaelee@dgist.ac.kr</a>.</p>
+<form><div class="form-row"><label class="field"><span>Your name</span><input name="name" required autocomplete="name" maxlength="100"></label><label class="field"><span>Current program or background</span><input name="program" required maxlength="180" placeholder="e.g. a third-year engineering student"></label></div>
+<div class="form-row"><label class="field"><span>I would like to discuss</span><select name="opportunity"><option>Graduate research</option><option>Undergraduate research / internship</option><option>Postdoctoral research</option><option>Research opportunities</option></select></label><label class="field"><span>Research interest</span><select name="area"><option>Still exploring</option><option>Single-microfiber soft sensors &amp; robotic touch</option><option>Wearable sensors &amp; smart textiles</option><option>Electronic sutures &amp; bioelectronics</option><option>Artificial muscles &amp; soft robots</option></select></label></div>
+<label class="field"><span>A few words about your interests <small>(optional)</small></span><textarea name="message" maxlength="2500" placeholder="What would you like to build, understand or learn?"></textarea></label>
+<button class="button button-primary" type="submit">Prepare my email <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></button><p class="form-note">You can review the draft before sending it through your own email app. Nothing is submitted by this form.</p>
+</form><pre class="draft-output" data-draft-output hidden tabindex="0" aria-label="Prepared email draft"></pre><div class="dialog-draft-actions"><a class="button button-primary button-small" data-email-draft href="mailto:jaelee@dgist.ac.kr">Open email draft <svg class="arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a><button class="button button-ghost button-small" data-copy-draft>Copy draft</button></div><p class="copy-status" data-copy-status role="status" aria-live="polite"></p>
+</div></dialog>
 </body>
 </html>
