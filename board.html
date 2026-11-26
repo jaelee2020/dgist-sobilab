@@ -478,7 +478,7 @@
         </div>
     </footer>
 
-    <script src="board-data.js?v=mns1"></script>
+    <script src="board-data.js?v=defenses20261126"></script>
     <script>
     // ====== Board Data loaded from board-data.js ======
     // boardItems is loaded from board-data.js
@@ -504,7 +504,7 @@
             <div class="masonry-item bg-white dark:bg-gray-800 rounded-xl shadow-md border border-gray-200 dark:border-gray-700 overflow-hidden cursor-pointer" onclick="openLightbox(${start + i})">
                 ${(item.slideshow && item.images && item.images.length > 1) ? `
                 <div class="board-slideshow" data-idx="0" data-interval="${item.interval || 2500}" data-elapsed="0">
-                    ${item.images.map((src, k) => `<img src="${src}" alt="${item.title}" class="bs-img${k === 0 ? ' active' : ''}" loading="lazy">`).join('')}
+                    ${item.images.map((src, k) => `<img src="${src}" alt="${item.imageAlts?.[k] || item.title}" class="bs-img${k === 0 ? ' active' : ''}" loading="lazy">`).join('')}
                     <button class="bs-btn bs-prev" aria-label="Previous photo" onclick="event.stopPropagation();bsMove(this,-1)">&#10094;</button>
                     <button class="bs-btn bs-next" aria-label="Next photo" onclick="event.stopPropagation();bsMove(this,1)">&#10095;</button>
                     <div class="bs-dots">${item.images.map((_, k) => `<span class="bs-dot${k === 0 ? ' active' : ''}"></span>`).join('')}</div>
@@ -607,7 +607,7 @@
         if (imgList.length > 1) {
             imgContainer.innerHTML = `
                 <div class="lb-slideshow">
-                    ${imgList.map((src, i) => `<img src="${src}" alt="${item.title}" class="lb-img${i === 0 ? ' active' : ''}">`).join('')}
+                    ${imgList.map((src, i) => `<img src="${src}" alt="${item.imageAlts?.[i] || item.title}" class="lb-img${i === 0 ? ' active' : ''}">`).join('')}
                     <button class="lb-btn lb-prev" aria-label="Previous photo" onclick="lbMove(-1)">&#10094;</button>
                     <button class="lb-btn lb-next" aria-label="Next photo" onclick="lbMove(1)">&#10095;</button>
                     <div class="lb-dots">${imgList.map((_, i) => `<button class="lb-dot${i === 0 ? ' active' : ''}" onclick="lbGo(${i})"></button>`).join('')}</div>
@@ -642,10 +642,11 @@
 
     function startLbAuto() {
         stopLbAuto();
+        const interval = getFilteredItems()[currentLbIndex]?.lightboxInterval ?? 1500;
         lbTimer = setInterval(() => {
             if (!document.querySelector('.lb-img')) { stopLbAuto(); return; }
             lbRender(lbSlideIdx + 1);
-        }, 1500);
+        }, interval);
     }
 
     function stopLbAuto() {

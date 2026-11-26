@@ -3,6 +3,28 @@
 const boardItems = [
         // === New (2026) ===
         {
+            title: "Congratulations, Jinho, Jimin, and Tanveer!",
+            date: "Nov 2026",
+            year: 2026,
+            desc: "Congratulations to Jinho Kim on successfully defending his Ph.D. dissertation and to Jimin Kim and Ahmed Tanveer on successfully defending their M.S. theses.\n\nThank you for the hard work you put into your research and for everything you've contributed to SoBiLab. We're proud of you and wish you every success in what comes next!",
+            img: "images/board/thesis-defenses-2026/jinho-group.jpg",
+            images: [
+                "images/board/thesis-defenses-2026/jinho-group.jpg",
+                "images/board/thesis-defenses-2026/jimin-group.jpg",
+                "images/board/thesis-defenses-2026/tanveer-group.jpg",
+                "images/board/thesis-defenses-2026/advisor-and-students.jpg"
+            ],
+            imageAlts: [
+                "Lab members after Jinho Kim's Ph.D. defense",
+                "Lab members after Jimin Kim's M.S. defense",
+                "Lab members after Ahmed Tanveer's M.S. defense",
+                "Jinho Kim, Jimin Kim, and Ahmed Tanveer in three photos with Prof. Jaehong Lee"
+            ],
+            slideshow: true,
+            interval: 4000,
+            lightboxInterval: 4000
+        },
+        {
             title: "2026 MNS Fall Conference",
             date: "Oct 2026",
             year: 2026,
